@@ -13,10 +13,11 @@
   <base href="">
 
   <!-- icons -->
-  <link theme-icon href="files/sample-logo.png" rel="icon">
-  <meta theme-color content="#888" name="msapplication-TileColor">
-  <meta theme-color content="#888" name="msapplication-TileImage">
-  <link theme-icon href="files/sample-logo.png" rel="apple-touch-icon">
+  <link href="files/sample-logo.png" rel="icon" theme-icon="">
+  <meta content="#888" name="msapplication-TileColor">
+  <meta content="#888" name="msapplication-TileImage">
+  <meta content="#888" name="theme-color">
+  <link href="files/sample-logo.png" rel="apple-touch-icon" theme-icon="">
 
   <!-- enable google maps -->
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -34,30 +35,35 @@
 <body class="home">
 
   <header role="banner">
-    <a class="brand" href="index"><img theme-logo src="files/persistence.png"></a>
+    <a class="brand" href="index"><img src="resources/perspective.png"></a>
     <div class="primary-nav">
-      <ul respond-plugin type="menu" menu="primary">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="page/about.html">About</a></li>
-        <li><a href="page/contact.html">Contact</a></li>
+      <ul type="menu">
+        <li active>
+          <a href="index">Home</a>
+        </li>
+        <li>
+          <a href="blog">Blog</a>
+        </li>
+        <li>
+          <a href="page/about">About</a>
+        </li>
+        <li>
+          <a href="page/contact">Contact</a>
+        </li>
       </ul>
     </div>
   </header>
 
   <div class="container" id="content" role="main">
     <div class="block row jumbotron">
-      <div class="col col-md-6">
-        <h1>Enjoy our cup of coffee</h1>
-        <p>Life moves pretty fast. If you don’t stop and look around once in a while, you could miss it.</p>
-        <p><a href="/page/about">Get started</a></p>
-      </div>
-      <div class="col col-md-6"><img class="img-responsive" src="resources/coffee.png"></div>
+      <div class="col col-md-12">
+        <p>Secure your financial future.  Learn from our perspective. <a href="/page/about">Get started now</a></p>
+       </div>
     </div>
     <div class="container nested-container alternate-background-3">
       <div class="block row">
         <div class="col col-md-12">
-          <h3>Your New Favorite Coffee Shop</h3>
+          <h3>Local, experienced financial advice</h3>
           <p>Persistence Coffee features the perfect combination of a relaxing atmosphere, great coffee, and a friendly staff. Come in and make us your new favorie coffee shop.</p>
         </div>
       </div>
@@ -65,18 +71,18 @@
     <div class="container nested-container">
       <div class="block row divider">
         <div class="col col-md-4">
-          <img class="icon" src="resources/coffee-icon.png">
-          <h3>Delicious Coffee</h3>
+          <img class="icon" src="resources/bulb-icon.png">
+          <h3>Sound Ideas</h3>
           <p>A great way to start your day. We feature 100% free-trade arabica bean coffee. It will wake you up and keep you going.</p>
         </div>
         <div class="col col-md-4">
-          <img class="icon" src="resources/events-icon.png">
-          <h3>Great events</h3>
+          <img class="icon" src="resources/phone-icon.png">
+          <h3>Always Available</h3>
           <p>We feature live local music, book readings, and more. We also have a space for you to host your own small events.</p>
         </div>
         <div class="col col-md-4">
-          <img class="icon" src="resources/wifi-icon.png">
-          <h3>Fast, free WIFI</h3>
+          <img class="icon" src="resources/lock-icon.png">
+          <h3>Secure and Private</h3>
           <p>Kick back and relax with a cup of coffee and our fast, free WIFI. We have enough speed to go around.</p>
         </div>
       </div>
@@ -84,15 +90,15 @@
     <div class="container nested-container backdrop">
       <div class="block row">
         <div class="col col-md-12">
-          <h3>Casual Dining</h3>
-          <p>Enjoy the atmosphere in our comfortable, calm eatery.</p>
+          <h3>A window into your future</h3>
+          <p>We help you make sense of your financial future by giving you a clearer view.</p>
         </div>
       </div>
     </div>
     <div class="container nested-container">
       <div class="block row">
         <div class="col col-md-12">
-          <h3>Centrally Located</h3>
+          <h3>Centrally located</h3>
           <div respond-plugin type="map" address="700 Clark Ave, St. Louis, MO 63102" zoom="12">
             <div class="map-container"></div>
     				<p class="map-address">
@@ -107,7 +113,7 @@
       <div class="block row" id="block-4">
         <div class="col col-md-12">
           <h3>We would like to hear from you!</h3>
-          <p>Want to schedule an event, request a new menu, or talk to us about coffee?  Reach out to us <a href="page/contact">from our website</a> or give us a call at <a href="tel:(123) 456-1234">(123) 456-1234</a>.  We would love to hear from you.</p>
+          <p>Lets get together for a free, no obligation meeting. Reach out to us <a href="page/contact">from our website</a> or give us a call at <a href="tel:(123) 456-1234">(123) 456-1234</a>.  We would love to hear from you.</p>
         </div>
       </div>
     </div>
@@ -127,11 +133,19 @@
       </div>
       <div class="block row">
         <div class="col col-md-12">
-          <ul respond-plugin type="menu" menu="footer">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="page/about.html">About</a></li>
-            <li><a href="page/contact.html">Contact</a></li>
+          <ul type="menu">
+            <li>
+              <a href="index">Home</a>
+            </li>
+            <li>
+              <a href="blog">Blog</a>
+            </li>
+            <li>
+              <a href="page/about">About</a>
+            </li>
+            <li>
+              <a href="page/contact">Contact</a>
+            </li>
           </ul>
         </div>
       </div>

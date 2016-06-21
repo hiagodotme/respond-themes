@@ -2,7 +2,7 @@
 <html dir="ltr" lang="en">
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Blog</title>
+  <title>Contact</title>
   
   <!-- meta -->
   <meta charset="utf-8">
@@ -10,13 +10,14 @@
   <meta content="Welcome to your new homepage created with Respond" name="description">
   <meta content="" name="keywords">
   <meta content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" name="viewport"><!-- base -->
-  <base href="">
+  <base href="../">
   
   <!-- icons -->
-  <link theme-icon href="files/sample-logo.png" rel="icon">
-  <meta theme-color content="#888" name="msapplication-TileColor">
-  <meta theme-color content="#888" name="msapplication-TileImage">
-  <link theme-icon href="files/sample-logo.png" rel="apple-touch-icon">
+  <link href="files/sample-logo.png" rel="icon" theme-icon="">
+  <meta content="#888" name="msapplication-TileColor">
+  <meta content="#888" name="msapplication-TileImage">
+  <meta content="#888" name="theme-color">
+  <link href="files/sample-logo.png" rel="apple-touch-icon" theme-icon="">
   
   <!-- font -->
   <link href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet" type="text/css">
@@ -31,13 +32,21 @@
 <body class="content">
 
   <header role="banner">
-    <a class="brand" href="index"><img theme-logo src="files/persistence.png"></a>
+    <a class="brand" href="index"><img src="files/persistence.png"></a>
     <div class="primary-nav">
-      <ul respond-plugin type="menu" menu="primary">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="page/about.html">About</a></li>
-        <li><a href="page/contact.html">Contact</a></li>
+      <ul type="menu">
+        <li>
+          <a href="index">Home</a>
+        </li>
+        <li>
+          <a href="blog">Blog</a>
+        </li>
+        <li>
+          <a href="page/about">About</a>
+        </li>
+        <li active>
+          <a href="page/contact">Contact</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -46,8 +55,9 @@
   <div class="container" role="main">
     <div id="block-1" class="block row">
       <div class="col col-md-12">
-  		  <h1>Recent Posts</h1>
-  		  <div respond-plugin type="posts"></div>
+  		  <h1>Contact Us</h1>
+  		  <p>Fill out the form below to get in touch.</p>
+  		  <div respond-plugin="" type="form" form="contact-us"></div>
       </div>
   </div>
 
@@ -65,11 +75,19 @@
       </div>
       <div class="block row">
         <div class="col col-md-12">
-          <ul respond-plugin type="menu" menu="footer">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="page/about.html">About</a></li>
-            <li><a href="page/contact.html">Contact</a></li>
+          <ul type="menu">
+            <li>
+              <a href="index">Home</a>
+            </li>
+            <li>
+              <a href="blog">Blog</a>
+            </li>
+            <li>
+              <a href="page/about">About</a>
+            </li>
+            <li>
+              <a href="page/contact">Contact</a>
+            </li>
           </ul>
         </div>
       </div>
