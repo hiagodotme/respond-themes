@@ -25,36 +25,31 @@ respond.plugins = {
     for(x=0; x<maps.length; x++) {
       respond.plugins.setupMap(maps[x]);
     }
+    
+    // generic success toast
+    if(window.location.hash) {
+      var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      
+      if(hash === 'success') {
+        toast.show('success');
+      }
+    }
 
-  },
+  },  
 
   /**
-   * Submits a form
+   * checks for errors prior to submitting the form
    *
    */
   submitForm: function(e) {
 
-    e.preventDefault();
-
-    var form, api, groups, siteId, submission, label, id, type, required, x, hasError = false;
+    var form, groups, submission, label, id, type, required, x, hasError = false;
 
     // get reference to form
     form = e.target;
 
-    // get api
-    api = form.getAttribute('action');
-    siteId = form.getAttribute('data-site');
-
 		// select all inputs in the local DOM
 		groups = form.querySelectorAll('.form-group');
-
-		// create submission
-		submission = {
-			url: window.location.href,
-			siteId: siteId,
-			formId: this.id,
-			fields: []
-		};
 
 		// walk through inputs
 		for(x=0; x<groups.length; x++) {
@@ -97,14 +92,7 @@ respond.plugins = {
 					value = value.slice(0, -2);
 				}
 			}
-
-			submission.fields.push(
-			  {
-				  id: id,
-				  value: value
-			  }
-			);
-
+			
 			// check required fields
 			if(required == 'true' && value == ''){
 				groups[x].className += ' has-error';
@@ -116,49 +104,17 @@ respond.plugins = {
 		// exit if error
 		if(hasError == true) {
 		  form.querySelector('.error').setAttribute('visible', '');
+		  
+		  // stop processing
+		  e.preventDefault();
 			return false;
 		}
 
 		// set loading
 		form.querySelector('.loading').setAttribute('visible', '');
-
-		// set context
-		var context = this;
-
-		// submit form
-		var xhr = new XMLHttpRequest();
-
-		// set URI
-		var uri = api + '/submissions/add';
-
-		xhr.open('POST', encodeURI(uri));
-
-		// handle success
-		xhr.onload = function() {
-		    if(xhr.status === 200){
-
-		    	// clear form, hide loading
-          form.querySelector('.loading').removeAttribute('visible');
-          form.querySelector('.error').removeAttribute('visible');
-          form.querySelector('.success').setAttribute('visible', '');
-
-		    	// clear the form
-		    	respond.plugins.clearForm(form);
-		    }
-		    else if(xhr.status !== 200){
-
-		      // show error
-		    	form.querySelector('.loading').removeAttribute('visible');
-          form.querySelector('.error').setAttribute('visible', '');
-
-		      console.log('[respond.error] respond-form component: failed post, xhr.status='+xhr.status);
-		    }
-		};
-
-		// send serialized data
-		xhr.send(JSON.stringify(submission));
-
-		return false;
+		
+		return true;
+		
   },
 
   /**
@@ -309,4 +265,99 @@ respond.plugins = {
 document.addEventListener("DOMContentLoaded", function(event) {
   respond.plugins.init();
 });
+
+
+/*
+ * Shows a toast
+ * Usage: toast.show('success', 'Saved!');  toast.show('failure', 'Error!');
+ */
+var toast = toast || {};
+
+toast = (function() {
+
+  'use strict';
+
+  return {
+
+    version: '0.0.1',
+
+    /**
+     * Creates the toast
+     */
+    setup: function() {
+
+      var current;
+
+      current = document.createElement('div');
+      current.setAttribute('class', 'app-toast');
+      current.innerHTML = 'Sample Toast';
+
+      // append toast
+      document.body.appendChild(current);
+
+      return current;
+
+    },
+
+    /**
+     * Shows the toast
+     */
+    show: function(status, text) {
+
+      var current;
+
+      current = document.querySelector('.app-toast');
+
+      if(current == null) {
+        current = toast.setup();
+      }
+
+      current.removeAttribute('success');
+      current.removeAttribute('failure');
+
+      current.setAttribute('active', '');
+
+      // add success/failure
+      if (status == 'success') {
+        current.setAttribute('success', '');
+
+        if(text == '' || text == undefined || text == null) {
+
+          text = '<svg xmlns="http://www.w3.org/2000/svg" fill="#000000" height="24" viewBox="0 0 24 24" width="24">' +
+                  '<path d="M0 0h24v24H0z" fill="none"/>' +
+                  '<path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>' +
+                  '</svg>';
+
+        }
+
+
+      }
+      else if (status == 'failure') {
+        current.setAttribute('failure', '');
+
+        if(text == '' || text == undefined || text == null) {
+
+          text = '<svg xmlns="http://www.w3.org/2000/svg" fill="#000000" height="24" viewBox="0 0 24 24" width="24">' +
+                 '<path d="M0 0h24v24H0V0z" fill="none"/>' +
+                 '<path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>' +
+                 '</svg>';
+
+        }
+      }
+
+      // set text
+      current.innerHTML = text;
+
+      // hide toast
+      setTimeout(function() {
+        current.removeAttribute('active');
+      }, 1000);
+
+    }
+
+  }
+
+})();
+
+toast.setup();
 

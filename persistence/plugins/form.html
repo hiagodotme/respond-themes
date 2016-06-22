@@ -4,7 +4,11 @@
 
   {% if form.id == attributes.form  %}
 
-<form id="{{ form.id }}" action="{{ site.api }}" data-site="{{ site.id }}" respond-form>
+<form id="{{ form.id }}" action="{{ site.api }}/submissions/submit" method="post" data-site="{{ site.id }}" respond-form >
+
+    <input name="siteid" type="hidden" value="{{ site.id }}">
+    <input name="formid" type="hidden" value="{{ form.id }}">
+
 
     {% for field in form.fields %}
       <div class="form-group" data-id="{{ field.id }}" data-label="{{ field.label }}"  data-type="{{ field.type }}" data-required="{{ field.required }}">
@@ -71,8 +75,6 @@
   	<!-- ack: https://github.com/jxnblk/loading -->
   	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g><path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/><path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"><animateTransform attributeName="transform" type="rotate" from="0 16 16" to="360 16 16" dur="0.8s" repeatCount="indefinite" /></path></g></svg>
   </span>
-
-  <span class="success">Form submitted successfully</span>
 
   <span class="error">There was an error submitting your form</span>
 </form>

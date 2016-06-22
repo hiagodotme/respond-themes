@@ -9,12 +9,14 @@
   {% if count < 5 %}
 
   {% if 'post/' in page.url %}
+  
+    <div class="list-item">
 
-      <h2>{{ page.title }}</h2>
+      <h5><a href="{{ page.url }}">{{ page.title }}</a></h5>
       
       <p>{{ page.description }}</p>
       
-      <p><a href="{{ page.url }}">Read more...</a></p>
+    </div>
       
       {% set count = count + 1 %}
      

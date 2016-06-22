@@ -1,5 +1,5 @@
 /* messages */
-[respond-form] .success, [respond-form] .error{
+[respond-form] .success, [respond-form] .error {
 	display: none;
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -8,24 +8,24 @@
 	margin: 0 0 0 15px;
 }
 
-	[respond-form] .success[visible], [respond-form] .error[visible]{
+	[respond-form] .success[visible], [respond-form] .error[visible] {
 		display: inline-block;
 	}
 
-[respond-form] .error{
+[respond-form] .error {
 	border: 1px solid #CF4647;
 	color: #fff;
 	background-color: #CF4647;
 }
 
-[respond-form] .success{
+[respond-form] .success {
 	border: 1px solid #08B168;
 	color: #fff;
 	background-color: #08B168;
 }
 
 /* loading */
-[respond-form] .loading{
+[respond-form] .loading {
 	display: none;
 	color: #888;
 	vertical-align: top;
@@ -35,11 +35,11 @@
 	margin-left: 5px;
 }
 
-	[respond-form] .loading[visible]{
+	[respond-form] .loading[visible] {
 		display: inline-block;
 	}
 
-	[respond-form] .loading svg{
+	[respond-form] .loading svg {
 		display: block;
 		vertical-align: top;
 		width: 25px;
@@ -54,9 +54,67 @@
 	}
 
 /* maps */
-.map-container{
+.map-container {
   display: block;
   height: 200px;
   width: 100%;
   border: 1px solid #ddd;
 }
+
+/* list items */
+body .list-item {
+  border-top: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+body .list-item h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+body.content .list-item p {
+  font-size: 14px;
+  margin: 0 !important;
+  padding: 0;
+}
+
+/* toast */
+body .app-toast {
+  font-family: 'Helvetica', 'Arial', 'sans-serif';
+  position: fixed;
+  z-index: 1002;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+  color: #FFF;
+  background-color: #345A6F;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+  z-index: 100005;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+  body .app-toast svg {
+    fill: currentColor;
+  }
+
+  body .app-toast[success] {
+    background-color: #88C425;
+  }
+
+  body .app-toast[failure] {
+    background-color: #ED4747;
+  }
+
+  body .app-toast[active] {
+    visibility: visible;
+    opacity: 1;
+  }

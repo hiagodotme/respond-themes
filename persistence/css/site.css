@@ -44,8 +44,9 @@ body h3 {
 }
 
 body h4 {
-  font-size: 16px;
-  color: #333;
+  font-size: 14px;
+  color: #2FB8AC;
+  text-transform: uppercase;
 }
 
 body h5 {
@@ -53,8 +54,13 @@ body h5 {
   color: #333;
 }
 
-body a {
+body a, body a:visited {
   color: #2FB8AC;
+}
+
+body a:hover {
+  color: #2FB8AC;
+  text-decoration: underline;
 }
 
 body p, body td, body th, body small, body li, body label, body input {
