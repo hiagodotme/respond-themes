@@ -5,21 +5,53 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var minify = require('gulp-minify');
 
+// list themes
+var themes = ['energy', 'persistence', 'perspective', 'bootstrap'];
 
-gulp.task('energy', function() {
+// copy shared files
+gulp.task('shared', function() {
 
-  // prettify html
-  gulp.src('energy/**/*.html')
-    .pipe(prettify({indent_size: 2}))
-    .pipe(gulp.dest('energy'))
+  var x;
   
-  // concat css  
-  gulp.src(['energy/css/libs.min.css', 'energy/css/plugins.css', 'energy/css/site.css'])
-    .pipe(concat('site-all.css'))
-    .pipe(minifyCss())
-    .pipe(rename('site-min.css'))
-    .pipe(gulp.dest('energy/css'));
+  // walk through the themes
+  for(x=0; x<themes.length; x++) {
+  
+    // copy shared directory to themes   
+    gulp.src(['shared/**/*']).pipe(gulp.dest(themes[x]));
+      
+  }
+
     
 });
 
-gulp.task('default', ['energy']);
+// cleanup files
+gulp.task('cleanup', function() {
+
+  var x;
+  
+  // walk through the themes
+  for(x=0; x<themes.length; x++) {
+  
+    // concat css  
+    gulp.src([themes[x] + '/css/libs.min.css', themes[x] + '/css/plugins.css', themes[x] + '/css/site.css'])
+      .pipe(concat('site.all.css'))
+      .pipe(minifyCss())
+      .pipe(rename('site.min.css'))
+      .pipe(gulp.dest(themes[x] + '/css'));
+        
+  }
+
+    
+});
+
+// prettify html (as needed)
+gulp.task('prettify', function() {
+
+  gulp.src('temp/**/*.html')
+    .pipe(prettify({indent_size: 2}))
+    .pipe(gulp.dest(themes[x]));
+    
+});
+
+// run tasks
+gulp.task('default', ['shared', 'cleanup']);

@@ -15,59 +15,42 @@
   <base href="../">
 
   <!-- icons -->
-  <link theme-icon href="files/sample-logo.png" rel="icon">
+  <link theme-icon href="resources/icon.png" rel="icon">
   <meta theme-color content="#888" name="msapplication-TileColor">
   <meta theme-color content="#888" name="msapplication-TileImage">
-  <link theme-icon href="files/sample-logo.png" rel="apple-touch-icon">
+  <link theme-icon href="resources/icon.png" rel="apple-touch-icon">
 
   <!-- font -->
   <link href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet" type="text/css">
-  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.css" rel="stylesheet">
 
   <!-- css -->
-  <link type="text/css" href="css/libs.min.css" rel="stylesheet">
-  <link type="text/css" href="css/plugins.css" rel="stylesheet">
-  <link type="text/css" href="css/site.css" rel="stylesheet">
+  <link href="css/site.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body class="content">
 
-<!-- background and mask -->
-<div class="background"></div>
-<div class="background-divider"></div>
-<div class="background-mask"></div>
-
 <header role="banner">
-
-  <nav class="navbar" role="navigation">
-
-  	<div class="navbar-header">
-	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-	      <span class="sr-only">Toggle navigation</span>
-	      <i class="fa fa-bars"></i>
-	    </button>
-
-		<a class="navbar-brand" href="index"><img theme-logo src="files/sample-logo.png"></a>
-
-  	</div>
-  	<!-- /.navbar-header -->
-
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-
-      <ul respond-plugin type="menu" menu="primary" class="nav navbar-nav">
-        <li active><a href="index.html">Home</a></li>
+    <a class="brand" href="index"><img theme-logo src="resources/logo.png"></a>
+    
+    <a class="search" respond-search>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24">
+          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          <path d="M0 0h24v24H0z" fill="none"/>
+      </svg>
+    </a>
+    
+    
+    <div class="primary-nav">
+      <ul respond-plugin type="menu" menu="primary">
+        <li><a href="index.html">Home</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="page/about.html">About</a></li>
         <li><a href="page/contact.html">Contact</a></li>
       </ul>
-
     </div>
-    <!-- /.navbar-collapse -->
-
-  </nav>
-
-</header>
+  </header>
 
 <div id="content" class="container" role="main">
 

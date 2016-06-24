@@ -14,7 +14,7 @@ body .container {
 }
 
 body .container .row {
-  padding: 15px 25px;
+  padding: 15px 10px;
 }
 
 
@@ -25,7 +25,7 @@ body h1,body h2,body h3,body h4,body h5 {
 }
 
 body h1,body h2,body h3,body h4,body h5,body p,body blockquote {
-  margin-bottom: 25px;
+  margin: 0 10px 25px 10px;
 }
 
 body h1 {
@@ -187,6 +187,12 @@ header {
   padding: 0;
 }
 
+header .search {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
 body .brand {
   text-transform: uppercase;
   display: block;
@@ -225,7 +231,7 @@ body .brand {
 
     body .primary-nav ul li a{
       margin: 0;
-      padding: 5px 25px;
+      padding: 5px 10px;
       color: #fff;
       text-transform: uppercase;
       font-size: 14px;
@@ -393,7 +399,7 @@ body.home .jumbotron h1 {
   background-color: transparent;
   text-align: left;
   margin: 0;
-  padding: 75px 0 10px 0;
+  padding: 75px 10px 10px 10px;
   color: #fff;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(17,17,17,0.5);
@@ -406,13 +412,13 @@ body.home .jumbotron p {
   background-color: transparent;
   text-align: left;
   margin: 0;
-  padding: 0 0 25px 0;
+  padding: 0 10px 25px 10px;
   color: #fff;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(17,17,17,0.5);
 }
 
-body.home .jumbotron a,body.home .jumbotron a:hover {
+body.home .jumbotron a, body.home .jumbotron a:hover {
   display: block;
   margin-top: 25px;
   margin-right: 10px;
@@ -423,10 +429,12 @@ body.home .jumbotron a,body.home .jumbotron a:hover {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
+  text-align: center;
 }
 
 body.home .icon{
   max-height: 100px;
+  margin: 0 0 25px 0;
 }
 
 body.home .nested-container {
@@ -535,6 +543,10 @@ body.content .container {
   background-color: #fff;
 }
 
+body.content .container[role=main] {
+  min-height: 500px;
+}
+
 body.content footer.container,body.content footer.container .block {
   background-color: #888 !important;
 }
@@ -605,5 +617,9 @@ body.content .blog-meta a {
 @media (min-width:768px) {
   body.content .container {
     max-width: 1000px;
+  }
+  
+  body .primary-nav ul li a{
+    padding: 5px 25px;
   }
 }
