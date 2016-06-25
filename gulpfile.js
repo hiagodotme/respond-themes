@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var minify = require('gulp-minify');
 
 // list themes
-var themes = ['energy', 'persistence', 'perspective', 'bootstrap'];
+var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'foundation'];
 
 // copy shared files
 gulp.task('shared', function() {

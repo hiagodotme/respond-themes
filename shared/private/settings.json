@@ -5,7 +5,7 @@
     },
     {
         "id": "sortable",
-        "value": ".col, .column"
+        "value": ".col, .column, .columns"
     },
     {
         "id": "theme-logo",
