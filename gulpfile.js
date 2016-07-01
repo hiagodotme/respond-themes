@@ -5,19 +5,60 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var minify = require('gulp-minify');
 
-// list themes
-var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'foundation'];
+// all themes
+var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation']
 
-// copy shared files
-gulp.task('shared', function() {
+// list themes
+var bootstrap = ['energy', 'persistence', 'perspective', 'bootstrap'];
+
+// foundation framework overrides
+var foundation = ['foundation'];
+
+// mdl framework overrides
+var mdl = ['material'];
+
+// copy shared/base files to all themes
+gulp.task('bootstrap', function() {
 
   var x;
   
   // walk through the themes
-  for(x=0; x<themes.length; x++) {
+  for(x=0; x<bootstrap.length; x++) {
   
     // copy shared directory to themes   
-    gulp.src(['shared/**/*']).pipe(gulp.dest(themes[x]));
+    gulp.src(['shared/bootstrap/**/*']).pipe(gulp.dest(bootstrap[x]));
+      
+  }
+
+    
+});
+
+// copy shared/foundation files to all themes
+gulp.task('foundation', function() {
+
+  var x;
+  
+  // walk through the themes
+  for(x=0; x<foundation.length; x++) {
+  
+    // copy shared directory to themes   
+    gulp.src(['shared/foundation/**/*']).pipe(gulp.dest(foundation[x]));
+      
+  }
+
+    
+});
+
+// copy shared/mdl files to all themes
+gulp.task('mdl', function() {
+
+  var x;
+  
+  // walk through the themes
+  for(x=0; x<mdl.length; x++) {
+  
+    // copy shared directory to themes   
+    gulp.src(['shared/mdl/**/*']).pipe(gulp.dest(mdl[x]));
       
   }
 
@@ -54,4 +95,4 @@ gulp.task('prettify', function() {
 });
 
 // run tasks
-gulp.task('default', ['shared', 'cleanup']);
+gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup']);
