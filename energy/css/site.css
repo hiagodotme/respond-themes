@@ -1,3 +1,8 @@
+/* support hashedit menu bar */
+[hashedit-active] {
+  padding-top: 50px;
+}
+
 /* global */
 body {
   background: #FFF url() repeat center center;

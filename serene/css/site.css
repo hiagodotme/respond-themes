@@ -1,3 +1,8 @@
+/* support hashedit menu bar */
+[hashedit-active] {
+  padding-top: 50px;
+}
+
 /* global */
 body h1, body h2, body h3, body h4, body h5, body p, body blockquote, body li, body a, body input, body select, body label{
   font-family: 'Quicksand';
