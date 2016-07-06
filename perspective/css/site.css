@@ -2,7 +2,7 @@
  * shared styles
  */
 body {
-  background: #fff url(../resources/mountains.png) no-repeat top center;
+  background: #fff url(../resources/background.png) no-repeat top center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -129,11 +129,11 @@ body footer {
 }
 
   body footer .container {
-    background-color: #555 !important;
+    background-color: #688394 !important;
   }
 
 body footer .row {
-  background-color: #555 !important;
+  background-color: #688394 !important;
 }
 
 body footer h3 {
@@ -212,7 +212,7 @@ body .brand {
 }
 
   body .brand img {
-    max-height: 50px;
+    max-height: 45px;
   }
 
   body .primary-nav{
@@ -251,7 +251,7 @@ body .brand {
 
   header .logo {
     margin: 0 auto;
-    max-width: 970px;
+    max-width: 900px;
   }
 
   body .navbar ul.nav {
@@ -311,7 +311,7 @@ body.home .container .jumbotron {
   background: transparent;
   border-radius: 0 !important;
   color: #fff;
-  background-color: rgba(85,85,85,.95);
+  background-color: #688394;
   max-width: 100%;
   margin: 350px 0 0 0;
   padding: 0;
@@ -495,7 +495,7 @@ body.content .container[role=main] {
 }
 
 body.content footer.container,body.content footer.container .block {
-  background-color: #888 !important;
+  background-color: #688394 !important;
 }
 
 body.content .container .row {

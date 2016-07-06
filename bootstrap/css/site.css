@@ -31,14 +31,17 @@ header .search {
   }
   
   header .navbar{
-    padding-right: 40px;
     margin: 10px;
+  }
+  
+  header .navbar ul {
+    margin-right: 40px;
   }
   
   header .navbar-toggle {
     height: 30px;
     width: 30px;
-    margin: 10px 10px 0 0;
+    margin: 10px 50px 0 0;
     padding: 0;
   }
   
