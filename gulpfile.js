@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var minify = require('gulp-minify');
+const zip = require('gulp-zip');
 
 // all themes
 var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation', 'executive', 'serene']
@@ -85,6 +86,27 @@ gulp.task('cleanup', function() {
 
 });
 
+// package the theme for distribution
+gulp.task('package', function() {
+
+  var x;
+
+  // walk through the themes
+  for(x=0; x<themes.length; x++) {
+
+    gulp.src(themes[x] + '/**/*', {base: './', follow: true})
+  		.pipe(zip(themes[x] + '.zip'))
+  		.pipe(gulp.dest('./' + themes[x] + '/dist'));
+  		
+    
+    gulp.src(themes[x] + '/screenshot.png', {base: './'})
+  		.pipe(rename(themes[x] + '.png'))
+      .pipe(gulp.dest('./' + themes[x] + '/dist'));
+  }
+
+
+});
+
 // prettify html (as needed)
 gulp.task('prettify', function() {
 
@@ -95,4 +117,4 @@ gulp.task('prettify', function() {
 });
 
 // run tasks
-gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup']);
+gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup', 'package']);

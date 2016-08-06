@@ -141,16 +141,18 @@ body footer .row {
 
 body footer h3 {
   color: #fff;
-  padding: 25px 25px 5px 25px;
+  padding: 25px 25px 5px 35px;
   margin: 0;
   text-transform: uppercase;
   font-size: 14px;
   color: #2FB8AC;
+  text-align: left;
 }
 
 body footer p {
   color: #fff;
   padding: 0 25px;
+  text-align: left;
 }
 
 body footer a, body footer a:hover {
@@ -173,7 +175,7 @@ body footer li {
   font-size: 12px;
 }
 
-body footer li a {
+body footer li a, body footer li a:visited {
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
@@ -369,18 +371,15 @@ html[dir=rtl] body /deep/ .toggle {
 /**
  * .home styles
  */
-body.home .container {
+body.home .row {
   position: relative;
-}
-
-body.home .container .row {
   margin: 0;
   background-color: #fff;
 }
 
-body.home .container .jumbotron {
+body.home .jumbotron {
   position: relative;
-  background: transparent;
+  background: transparent !important;
   border-radius: 0 !important;
   color: #fff;
   max-width: 100%;
@@ -389,12 +388,12 @@ body.home .container .jumbotron {
   text-align: center;
 }
 
-  body.home .container .jumbotron .col {
+  body.home .jumbotron .col {
     margin: 0;
     padding: 0;
   }
 
-  body.home .container .jumbotron .col .row {
+  body.home .jumbotron .col .row {
     margin: 0;
     padding: 0;
   }
@@ -442,7 +441,7 @@ body.home .icon{
   margin: 0 0 25px 0;
 }
 
-body.home .nested-container {
+body.home main .block {
   position: relative;
   border-bottom: 1px solid #ddd;
   text-align: center;
@@ -450,23 +449,33 @@ body.home .nested-container {
   background-color: #fff;
 }
 
-body.home .nested-container .row {
+body.home .block .row {
   background-color: transparent;
 }
 
-body.home .nested-container:last-child {
+body.home .block:last-child {
   border-bottom: none;
 }
 
-body.home .nested-container.backdrop {
+body.home .block.backdrop {
+  position: relative;
   padding-top: 300px;
   padding-bottom: 10px;
   overflow: hidden;
-  background: url(../resources/casual-dining.png) no-repeat center center;
   background-size: cover;
 }
 
-body.home .nested-container.backdrop h3 {
+  body.home .block.backdrop img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+body.home .block.backdrop h3 {
   margin: 0;
   padding: 0;
   text-align: left;
@@ -474,7 +483,7 @@ body.home .nested-container.backdrop h3 {
   text-shadow: 1px 1px 1px rgba(17,17,17,0.25);
 }
 
-body.home .nested-container.backdrop p {
+body.home .block.backdrop p {
   margin: 0;
   padding: 0;
   text-align: left;
@@ -482,7 +491,7 @@ body.home .nested-container.backdrop p {
   text-shadow: 1px 1px 1px rgba(17,17,17,0.25);
 }
 
-body.home .nested-container.backdrop a {
+body.home .block.backdrop a {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(17,17,17,0.25);
 }
@@ -497,7 +506,7 @@ html[dir=rtl] body.home .jumbotron a,html[dir=rtl] body.home .jumbotron a:hover 
 }
 
 @media (min-width:768px) {
-  body.home .jumbotron a,body.home .jumbotron a:hover {
+  body.home .jumbotron a, body.home .jumbotron a:hover {
     display: inline-block;
     margin-top: 0;
     margin-right: 0;
@@ -560,10 +569,6 @@ body.content .container .row {
   margin: 0;
 }
 
-body.content .container .row .row,body.content .container .row .col {
-  padding: 0;
-}
-
 body.content .container .row h1:first-child {
   margin-top: 0;
   padding-top: 10px;
@@ -602,28 +607,11 @@ body.content pre.prettyprint ol {
   padding-left: 35px;
 }
 
-body.content .blog-meta {
-  margin: 0;
-  padding: 0;
-}
-
-body.content .blog-meta p {
-  color: #aaa;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin: 0;
-  padding: 0;
-}
-
-body.content .blog-meta a {
-  margin-right: 5px;
-}
-
 @media (min-width:768px) {
   body.content .container {
     max-width: 1000px;
   }
-  
+
   body .primary-nav ul li a{
     padding: 5px 25px;
   }

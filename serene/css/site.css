@@ -192,17 +192,28 @@ body.home .callout-block {
 
 /* jumbotron */
 body.home .jumbotron{
+    position: relative;
   	box-sizing: border-box;
+  	overflow: hidden;
   	padding-top: 200px;
-	background: url(../resources/background.png) no-repeat 0 0;
   	background-size: cover;
   	background-position: center center;
-  	min-height: 700px;
+  	height: 700px;
   	border-radius: 0 !important;
   	color: #fff;
   	max-width: 100%;
   	margin: 0;
   	padding: 250px 20px 20px 20px;
+}
+
+body.home .jumbotron img {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 body.home .jumbotron h1, 

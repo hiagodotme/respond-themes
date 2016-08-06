@@ -75,8 +75,8 @@ body button i{
 /* nested containers */
 body .container .container{
 	max-width: 100%;
-  	padding: 25px 0 0 0;
-  	margin: 0 0 25px 0;
+	padding: 25px 0 0 0;
+	margin: 0 0 25px 0;
 }
 
 body .container .container:last-child{
@@ -317,101 +317,122 @@ body.home{
 }
 
 /* set container to full width */
-body.home .container{
+body.home .content .row{
+  border-bottom: 1px solid #ddd;
 	max-width: 100%;
-  	padding: 0;
-  	margin: 0 !important;
-  	padding-bottom: 0;
-}
-
-
-body.home .container .row{
-	max-width: 1100px;
+	padding: 25px 0 25px 0 !important;
+	margin: 0;
+	padding-bottom: 0;
 	margin: 0 auto;
-}
-
-body.home .container .container:last-child{
-	border-bottom: none;
+	max-width: 1200px;
 }
 
 /* jumbotron */
-body.home .jumbotron{
-  	box-sizing: border-box;
-  	border-radius: 0 !important;
-  	color: #fff;
-  	max-width: 100%;
+body.home .content .jumbotron{
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  color: #fff;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+  body.home .content .jumbotron img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  body.home .content .jumbotron .col-md-12{
+    position: absolute;
+    top: 225px;
+    left: 0;
   	margin: 0;
-  	padding: 50px 0 0 0;
-  	text-align: center;
-  	height: 600px;
-  	max-width: 100% !important;
-  	background: #ddd url(../resources/building.png) no-repeat center center;
-  	background-size: cover;
-}
-
-body.home .jumbotron .col-md-12{
-	margin: 0;
-  	padding: 0;
-}
-
-body.home .jumbotron h1{
-  	background-color: rgba(255,255,255,0.75);
-  	text-align: left;
-  	margin: 175px 0 0 0;
-  	padding: 25px 25px 0 25px;
-  	font-size: 25px;
-  	line-height: 35px;
-  	text-transform: uppercase;
-  	color: #555;
-  	width: 100%;
-  	max-width: 520px;
-}
-
-body.home .jumbotron p{
-  	background-color: rgba(255,255,255,0.75);
-  	text-align: left;
-  	margin: 0;
-  	padding: 10px 25px 25px 25px;
-  	font-size: 15px;
-  	line-height: 35px;
-  	text-transform: uppercase;
-  	color: #888;
-  	width: 100%;
-  	max-width: 520px;
-}
-
-body.home .jumbotron a, body .jumbotron a:hover{
-	  color: #888;
-  	border: 1px solid #888;
-  	padding: 5px 30px;
-  	border-radius: 0;
-  	text-decoration: none;
-  	margin-left: 10px;
-}
-
-/* .home .container */
-body.home .container {
-  border-bottom: 1px solid #ddd;
-  padding: 35px 0;
-}
+    	padding: 0;
+    	max-width: 520px;
+  }
+  
+  body.home .content .jumbotron h1{
+    	background-color: rgba(255,255,255,0.75);
+    	text-align: left;
+    	margin: 0;
+    	padding: 25px 25px 0 25px;
+    	font-size: 25px;
+    	line-height: 35px;
+    	text-transform: uppercase;
+    	color: #555;
+    	width: 100%;
+    	max-width: 520px;
+  }
+  
+  body.home .content .jumbotron p{
+    	background-color: rgba(255,255,255,0.75);
+    	text-align: left;
+    	margin: 0;
+    	padding: 10px 25px 25px 25px;
+    	font-size: 15px;
+    	line-height: 35px;
+    	text-transform: uppercase;
+    	color: #888;
+    	width: 100%;
+    	max-width: 520px;
+  }
+  
+  body.home .content .jumbotron a, body .content .jumbotron a:hover{
+  	  color: #888;
+    	border: 1px solid #888;
+    	padding: 5px 30px;
+    	border-radius: 0;
+    	text-decoration: none;
+    	margin-left: 10px;
+  }
+  
+  /* .home .container */
+  body.home .container {
+    border-bottom: 1px solid #ddd;
+    padding: 35px 0;
+  }
 
 
 /* intro */
-body.home .intro h3, body.home .intro p {
+body.home .content .row-center h3, body.home .content .row-center p {
   text-align: center;
 }
 
 /* callout */
-body.home .callout {
-  background: url(../resources/texture.png) no-repeat center top;
+body.home .content .callout {
+  position: relative;
+  overflow: hidden;
   background-size: cover;
-  padding: 100px 0 100px 0;
+  padding: 100px 0 100px 0 !important;
   text-align: center;
+  max-width: 100%;
 }
 
-  body.home .callout p {
+  body.home .content .callout img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  body.home .content .callout p {
     padding: 0 50px;
   }
+  
   
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -420,21 +441,21 @@ body.home .callout {
   		display: inline-block;
 	}
 
-	body.home .container{
+	body.home .row{
 		width: 100%;
 	}
 
-  	body.home .jumbotron .respond-image img{
-      max-width: 800px;
-      margin: 0;
-  	}
+	body.home .jumbotron .respond-image img{
+    max-width: 800px;
+    margin: 0;
+	}
 
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-	body.home .container{
+	body.home .row{
 		width: 100%;
 	}
 
@@ -443,7 +464,7 @@ body.home .callout {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-	body.home .container{
+	body.home .row{
 		width: 100%;
 	}
 

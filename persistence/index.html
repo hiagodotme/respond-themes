@@ -32,15 +32,15 @@
 
   <header role="banner">
     <a class="brand" href="index"><img theme-logo src="resources/logo.png"></a>
-    
+
     <a class="search" respond-search>
       <svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24">
           <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
           <path d="M0 0h24v24H0z" fill="none"/>
       </svg>
     </a>
-    
-    
+
+
     <div class="primary-nav">
       <ul respond-plugin type="menu" menu="primary">
         <li><a href="index.html">Home</a></li>
@@ -52,7 +52,7 @@
     </div>
   </header>
 
-  <div class="container" id="content" role="main">
+  <main class="container" role="main">
     <div class="block row jumbotron">
       <div class="col col-md-6">
         <h1>Enjoy our cup of coffee</h1>
@@ -61,64 +61,55 @@
       </div>
       <div class="col col-md-6"><img class="img-responsive" src="resources/coffee.png"></div>
     </div>
-    <div class="container nested-container alternate-background-3">
-      <div class="block row">
-        <div class="col col-md-12">
-          <h3>Your New Favorite Coffee Shop</h3>
-          <p>Persistence Coffee features the perfect combination of a relaxing atmosphere, great coffee, and a friendly staff. Come in and make us your new favorie coffee shop.</p>
+    <div class="block row alternate-background-3">
+      <div class="col col-md-12">
+        <h3>Your New Favorite Coffee Shop</h3>
+        <p>Persistence Coffee features the perfect combination of a relaxing atmosphere, great coffee, and a friendly staff. Come in and make us your new favorie coffee shop.</p>
+      </div>
+    </div>
+    <div class="block row divider">
+      <div class="col col-md-4">
+        <img class="icon" src="resources/coffee-icon.png">
+        <h3>Delicious Coffee</h3>
+        <p>A great way to start your day. We feature 100% free-trade arabica bean coffee. It will wake you up and keep you going.</p>
+      </div>
+      <div class="col col-md-4">
+        <img class="icon" src="resources/events-icon.png">
+        <h3>Great events</h3>
+        <p>We feature live local music, book readings, and more. We also have a space for you to host your own small events.</p>
+      </div>
+      <div class="col col-md-4">
+        <img class="icon" src="resources/wifi-icon.png">
+        <h3>Fast, free WIFI</h3>
+        <p>Kick back and relax with a cup of coffee and our fast, free WIFI. We have enough speed to go around.</p>
+      </div>
+    </div>
+    <div class="block row backdrop">
+      <img src="resources/casual-dining.png">
+      <div class="col col-md-12">
+        <h3>Casual Dining</h3>
+        <p>Enjoy the atmosphere in our comfortable, calm eatery.</p>
+      </div>
+    </div>
+    <div class="block row">
+      <div class="col col-md-12">
+        <h3>Centrally Located</h3>
+        <div respond-plugin type="map" address="700 Clark Ave, St. Louis, MO 63102" zoom="12">
+          <div class="map-container"></div>
+  				<p class="map-address">
+  					<span>700 Clark Ave, St. Louis, MO 63102</span>
+  					<a id="directions" href="http://maps.google.com/?q=700%20Clark%20Ave%2C%20St.%20Louis%2C%20MO%2063102">Get Directions</a>
+  				</p>
         </div>
       </div>
     </div>
-    <div class="container nested-container">
-      <div class="block row divider">
-        <div class="col col-md-4">
-          <img class="icon" src="resources/coffee-icon.png">
-          <h3>Delicious Coffee</h3>
-          <p>A great way to start your day. We feature 100% free-trade arabica bean coffee. It will wake you up and keep you going.</p>
-        </div>
-        <div class="col col-md-4">
-          <img class="icon" src="resources/events-icon.png">
-          <h3>Great events</h3>
-          <p>We feature live local music, book readings, and more. We also have a space for you to host your own small events.</p>
-        </div>
-        <div class="col col-md-4">
-          <img class="icon" src="resources/wifi-icon.png">
-          <h3>Fast, free WIFI</h3>
-          <p>Kick back and relax with a cup of coffee and our fast, free WIFI. We have enough speed to go around.</p>
-        </div>
+    <div class="block row">
+      <div class="col col-md-12">
+        <h3>We would like to hear from you!</h3>
+        <p>Want to schedule an event, request a new menu, or talk to us about coffee?  Reach out to us <a href="page/contact">from our website</a> or give us a call at <a href="tel:(123) 456-1234">(123) 456-1234</a>.  We would love to hear from you.</p>
       </div>
     </div>
-    <div class="container nested-container backdrop">
-      <div class="block row">
-        <div class="col col-md-12">
-          <h3>Casual Dining</h3>
-          <p>Enjoy the atmosphere in our comfortable, calm eatery.</p>
-        </div>
-      </div>
-    </div>
-    <div class="container nested-container">
-      <div class="block row">
-        <div class="col col-md-12">
-          <h3>Centrally Located</h3>
-          <div respond-plugin type="map" address="700 Clark Ave, St. Louis, MO 63102" zoom="12">
-            <div class="map-container"></div>
-    				<p class="map-address">
-    					<span>700 Clark Ave, St. Louis, MO 63102</span>
-    					<a id="directions" href="http://maps.google.com/?q=700%20Clark%20Ave%2C%20St.%20Louis%2C%20MO%2063102">Get Directions</a>
-    				</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container nested-container alternate-background-2">
-      <div class="block row" id="block-4">
-        <div class="col col-md-12">
-          <h3>We would like to hear from you!</h3>
-          <p>Want to schedule an event, request a new menu, or talk to us about coffee?  Reach out to us <a href="page/contact">from our website</a> or give us a call at <a href="tel:(123) 456-1234">(123) 456-1234</a>.  We would love to hear from you.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </main>
 
   <footer role="contentinfo">
     <div class="container">
