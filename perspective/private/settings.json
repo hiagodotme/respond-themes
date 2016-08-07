@@ -9,7 +9,7 @@
     },
     {
         "id": "blocks",
-        "value": ".row"
+        "value": ".block"
     },
     {
         "id": "grid",
@@ -21,7 +21,7 @@
           },
           {
             "name": "2 Column",
-            "desc": "100%",
+            "desc": "50%/50%",
             "html": "<div class=\"block row\" hashedit-block><div class=\"col col-md-6\" hashedit-sortable></div><div class=\"col col-md-6\" hashedit-sortable></div></div>"
           }
         ]

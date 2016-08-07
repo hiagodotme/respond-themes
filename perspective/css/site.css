@@ -135,15 +135,14 @@ body p {
   color: #555;
 }
 
+/* footer */
 body footer {
   position: relative;
+  background-color: #688394;
+  padding: 25px;
 }
 
-  body footer .container {
-    background-color: #688394 !important;
-  }
-
-body footer .row {
+body.home footer .block, body.content footer .block {
   background-color: #688394 !important;
 }
 
@@ -154,6 +153,7 @@ body footer h3 {
   text-transform: uppercase;
   font-size: 16px;
   color: #fff;
+  text-align: left;
 }
 
 body footer p {
@@ -161,6 +161,7 @@ body footer p {
   padding: 0 25px;
   font-size: 13px;
   line-height: 25px;
+  text-align: left;
 }
 
 body footer a, body footer a:hover {
@@ -192,6 +193,14 @@ body footer li a {
 body footer p {
   font-size: 1.25rem;
   text-transform: uppercase;
+}
+
+body.home footer {
+  margin-top: 0;
+}
+
+body.content footer .block, body.content footer .block {
+  background-color: #688394 !important;
 }
 
 /* header */
@@ -305,44 +314,42 @@ body .brand {
  * .home styles
  */
 
-body.home .container .row {
+body.home main.container .row {
   margin: 0;
   background-color: #fff;
 }
 
-body.home .container .row{
+body.home main.container .row{
   background-color: #fff;
   margin: 0 auto;
   padding: 25px 0 0 0;
   max-width: 1000px;
-} 
+}
 
-body.home .container .jumbotron {
+body.home main.container .jumbotron {
   position: relative;
   background: transparent;
   border-radius: 0 !important;
   color: #fff;
-  background-color: #688394;
+  background-color: rgb(104, 131, 148);
   max-width: 100%;
   margin: 350px 0 0 0;
   padding: 0;
-  text-align: center;
 }
 
-  body.home .container .jumbotron .col {
+  body.home main.container .jumbotron .col {
     margin: 0;
     padding: 0;
   }
 
-  body.home .container .jumbotron .col .row {
-    margin: 0;
-    padding: 0;
+  body.home main.container .jumbotron .row {
+    margin: 0 auto;
+    padding: 0 !important;
   }
 
 
-body.home .jumbotron h1 {
+body.home main.container .jumbotron h1 {
   background-color: transparent;
-  text-align: center;
   margin: 0;
   padding: 0;
   color: #fff;
@@ -350,21 +357,22 @@ body.home .jumbotron h1 {
   font-size: 35px;
   text-transform: uppercase;
   color: #fff;
+  text-align: center;
 }
 
-body.home .jumbotron p {
+body.home main.container .jumbotron p {
   background-color: transparent;
-  text-align: center;
   margin: 0;
-  padding: 10px 0;
+  padding: 0 0 25px 0 !important;
   color: #fff;
   width: 100%;
   font-size: 15px;
   text-transform: uppercase;
+  text-align: center;
 }
 
-body.home .jumbotron a, body.home .jumbotron a:hover {
-  display: block;
+body.home main.container .jumbotron a, body.home main.container .jumbotron a:hover {
+  display: inline-block;
   margin-top: 25px;
   margin-left: 10px;
   color: #fff;
@@ -376,11 +384,12 @@ body.home .jumbotron a, body.home .jumbotron a:hover {
   font-size: 14px;
 }
 
-body.home .icon{
+/* main .block */
+body.home main .block .icon{
   max-height: 75px;
 }
 
-body.home .nested-container {
+body.home main .block {
   position: relative;
   border-bottom: 1px solid #ddd;
   text-align: center;
@@ -388,15 +397,15 @@ body.home .nested-container {
   background-color: #fff;
 }
 
-body.home .nested-container .row {
+body.home main .block .row {
   background-color: transparent;
 }
 
-body.home .nested-container:last-child {
+body.home main .block:last-child {
   border-bottom: none;
 }
 
-body.home .nested-container.backdrop {
+body.home main .block.backdrop {
   padding-top: 300px;
   padding-bottom: 10px;
   overflow: hidden;
@@ -404,7 +413,7 @@ body.home .nested-container.backdrop {
   background-size: cover;
 }
 
-body.home .nested-container.backdrop h3 {
+body.home main .block.backdrop h3 {
   margin: 0;
   padding: 0;
   text-align: left;
@@ -412,7 +421,7 @@ body.home .nested-container.backdrop h3 {
   text-shadow: 1px 1px 1px rgba(17,17,17,0.25);
 }
 
-body.home .nested-container.backdrop p {
+body.home main .block.backdrop p {
   margin: 0;
   padding: 0;
   text-align: left;
@@ -420,16 +429,12 @@ body.home .nested-container.backdrop p {
   text-shadow: 1px 1px 1px rgba(17,17,17,0.25);
 }
 
-body.home .nested-container.backdrop a {
+body.home main .block.backdrop a {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(17,17,17,0.25);
 }
 
-body.home footer {
-  margin-top: 0;
-}
-
-html[dir=rtl] body.home .jumbotron a,html[dir=rtl] body.home .jumbotron a:hover {
+html[dir=rtl] body.home .jumbotron a, html[dir=rtl] body.home .jumbotron a:hover {
   margin-left: 0;
   margin-right: 10px;
 }
@@ -469,66 +474,50 @@ html[dir=rtl] body.home .jumbotron a,html[dir=rtl] body.home .jumbotron a:hover 
 /**
  * .content styles
  */
-body.content .container {
-  background-color: #fff;
+body.content main.container {
   margin: 0;
   padding: 0;
   width: 100%;
   border-top: 1px solid rgba(85,85,85,.5);
-} 
-
-body.content .container .row{
-  background-color: #fff;
-  margin: 0 auto !important;
-  padding: 25px 0 0 0;
-  max-width: 1000px;
-} 
- 
-body.content h1 {
-  margin-bottom: 35px;
-}
-
-body.content h2 {
-  margin-bottom: 25px;
-}
-
-body.content #content {
   margin-top: 25px;
-}
-
-body.content .container {
-  padding: 0;
   background-color: #fff;
-}
-
-body.content .container[role=main] {
   min-height: 500px;
 }
 
-body.content footer.container,body.content footer.container .block {
-  background-color: #688394 !important;
+body.content main.container .row{
+  margin: 0 auto !important;
+  padding: 25px 0 0 0;
+  max-width: 1000px;
 }
 
-body.content .container .row {
+body.content main h1 {
+  margin-bottom: 35px;
+}
+
+body.content main h2 {
+  margin-bottom: 25px;
+}
+
+body.content main .block .row {
   margin: 0;
 }
 
-body.content .container .row .row,body.content .container .row .col {
+body.content main .block .row .row, body.content main .block .row .col {
   padding: 0;
 }
 
-body.content .container .row h1:first-child {
+body.content main .block .row h1:first-child {
   margin-top: 0;
   padding-top: 10px;
 }
 
-body.content .block {
+body.content main .block {
   position: relative;
   background-color: #fff;
   z-index: 5;
 }
 
-body.content blockquote {
+body.content main blockquote {
   font-family: 'Roboto Condensed',sans-serif;
   font-size: 22px;
   line-height: 35px;
@@ -541,16 +530,16 @@ body.content blockquote {
   border-bottom: 1px solid #ccc;
 }
 
-body.content table,body.content p,body.content pre.prettyprint {
+body.content main table,body.content p ,body.content main pre.prettyprint {
   margin-bottom: 25px !important;
 }
 
-body.content pre,body.content pre * {
+body.content main pre, body.content main pre * {
   font-family: Courier,sans-serif;
   font-size: 1.5rem;
 }
 
-body.content pre.prettyprint ol {
+body.content main pre.prettyprint ol {
   margin-left: 0;
   padding-left: 35px;
 }

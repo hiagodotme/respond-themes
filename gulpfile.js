@@ -31,6 +31,8 @@ gulp.task('bootstrap', function() {
 
   }
 
+  return;
+
 
 });
 
@@ -46,6 +48,8 @@ gulp.task('foundation', function() {
     gulp.src(['shared/foundation/**/*']).pipe(gulp.dest(foundation[x]));
 
   }
+
+  return;
 
 
 });
@@ -63,6 +67,8 @@ gulp.task('mdl', function() {
 
   }
 
+  return;
+
 
 });
 
@@ -74,6 +80,8 @@ gulp.task('cleanup', function() {
   // walk through the themes
   for(x=0; x<themes.length; x++) {
 
+    console.log(themes[x]);
+
     // concat css
     gulp.src([themes[x] + '/css/libs.min.css', themes[x] + '/css/plugins.css', themes[x] + '/css/site.css'])
       .pipe(concat('site.all.css'))
@@ -83,6 +91,7 @@ gulp.task('cleanup', function() {
 
   }
 
+  return;
 
 });
 
@@ -97,15 +106,30 @@ gulp.task('package', function() {
     gulp.src(themes[x] + '/**/*', {base: './', follow: true})
   		.pipe(zip(themes[x] + '.zip'))
   		.pipe(gulp.dest('./' + themes[x] + '/dist'));
-  		
-    
+  }
+
+  return;
+
+});
+
+// package the theme for distribution
+gulp.task('screenshots', function() {
+
+  var x;
+
+  // walk through the themes
+  for(x=0; x<themes.length; x++) {
+
     gulp.src(themes[x] + '/screenshot.png', {base: './'})
   		.pipe(rename(themes[x] + '.png'))
       .pipe(gulp.dest('./' + themes[x] + '/dist'));
   }
 
+  return;
+
 
 });
+
 
 // prettify html (as needed)
 gulp.task('prettify', function() {
@@ -117,4 +141,4 @@ gulp.task('prettify', function() {
 });
 
 // run tasks
-gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup', 'package']);
+gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup', 'package', 'screenshots']);
