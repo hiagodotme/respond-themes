@@ -9,7 +9,7 @@
     },
     {
         "id": "blocks",
-        "value": ".row"
+        "value": ".block"
     },
     {
         "id": "grid",
@@ -21,8 +21,18 @@
           },
           {
             "name": "2 Column",
-            "desc": "100%",
-            "html": "<div class=\"block\"><div class=\"row\"><div class=\"col col-md-6\" hashedit-sortable></div><div class=\"col col-md-6\"></div></div></div>"
+            "desc": "50%/50%",
+            "html": "<div class=\"block\"><div class=\"row\"><div class=\"col col-md-6\"></div><div class=\"col col-md-6\"></div></div></div>"
+          },
+          {
+            "name": "3 Column",
+            "desc": "33%/33%/33%",
+            "html": "<div class=\"block\"><div class=\"row\"><div class=\"col col-md-4\"></div><div class=\"col col-md-4\"></div><div class=\"col col-md-4\"></div></div></div>"
+          },
+          {
+            "name": "4 Column",
+            "desc": "25%/25%/25%/25%",
+            "html": "<div class=\"block\"><div class=\"row\"><div class=\"col col-md-3\"></div><div class=\"col col-md-3\"></div><div class=\"col col-md-3\"></div><div class=\"col col-md-3\"></div></div></div>"
           }
         ]
     },
