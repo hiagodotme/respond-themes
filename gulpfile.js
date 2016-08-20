@@ -7,10 +7,10 @@ var minify = require('gulp-minify');
 const zip = require('gulp-zip');
 
 // all themes
-var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation', 'executive', 'serene']
+var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation', 'executive', 'serene', 'sidebar']
 
 // list themes
-var bootstrap = ['energy', 'persistence', 'perspective', 'bootstrap', 'executive', 'serene'];
+var bootstrap = ['energy', 'persistence', 'perspective', 'bootstrap', 'executive', 'serene', 'sidebar'];
 
 // foundation framework overrides
 var foundation = ['foundation'];
