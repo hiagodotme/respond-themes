@@ -12,6 +12,10 @@
         "value": ".block"
     },
     {
+        "id": "framework",
+        "value": "bootstrap"
+    },
+    {
         "id": "grid",
         "value": [
           {

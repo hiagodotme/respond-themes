@@ -12,6 +12,10 @@
         "value": ".block"
     },
     {
+        "id": "framework",
+        "value": "bootstrap"
+    },
+    {
         "id": "grid",
         "value": [
           {
@@ -42,6 +46,15 @@
         "description": "Primary logo of the site",
         "type": "image",
         "value": "files\/sample-logo.png",
+        "sets": "attribute",
+        "attribute": "src"
+    },
+    {
+        "id": "theme-background",
+        "label": "Logo",
+        "description": "Primary logo of the site",
+        "type": "image",
+        "value": "resources\/background.png",
         "sets": "attribute",
         "attribute": "src"
     },
