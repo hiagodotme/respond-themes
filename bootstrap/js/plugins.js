@@ -917,29 +917,33 @@ respond.component = (function() {
 
             el = els[x];
 
-            var request = new XMLHttpRequest();
-            request.open('GET', 'components/' + component, true);
+            function loadComponent(el, component) {
+                var request = new XMLHttpRequest();
+                request.open('GET', 'components/' + component, true);
 
-            request.onload = function() {
-              if (request.status >= 200 && request.status < 400) {
-                var html = request.responseText;
-                el.innerHTML = html;
+                request.onload = function() {
+                  if (request.status >= 200 && request.status < 400) {
+                    var html = request.responseText;
+                    el.innerHTML = html;
 
-                // setup other plugins
-                respond.map.setup();
-                respond.form.setup();
-                respond.lightbox.setup();
-                respond.list.setup();
-              } else {
-                console.log('[respond.component] XHR error, status=' + request.status);
-              }
-            };
+                    // setup other plugins
+                    respond.map.setup();
+                    respond.form.setup();
+                    respond.lightbox.setup();
+                    respond.list.setup();
+                  } else {
+                    console.log('[respond.component] XHR error, status=' + request.status);
+                  }
+                };
 
-            request.onerror = function() {
-                console.log('[respond.component] XHR connection error');
-            };
+                request.onerror = function() {
+                    console.log('[respond.component] XHR connection error');
+                };
 
-            request.send();
+                request.send();
+            }
+
+            loadComponent(el, component);
 
           }
 
