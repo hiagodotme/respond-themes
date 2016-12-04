@@ -94,6 +94,12 @@ gulp.task('cleanup', function() {
       .pipe(rename('site.min.css'))
       .pipe(gulp.dest(themes[x] + '/css'));
 
+
+    // concat js
+    gulp.src([themes[x] + '/js/libs.min.js', themes[x] + '/js/plugins.js',  themes[x] + '/js/site.js'])
+      .pipe(concat('site.all.js'))
+      .pipe(gulp.dest(themes[x] + '/js'));
+
   }
 
   return;
