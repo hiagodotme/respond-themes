@@ -955,7 +955,7 @@ respond.component = (function() {
      */
     setup: function() {
 
-      var els, el, x, component;
+      var els, el, x, component, delay=0;
 
       els = document.querySelectorAll('[respond-plugin][type=component][runat=client]');
 
@@ -964,6 +964,10 @@ respond.component = (function() {
         if(els[x].hasAttribute('component') == true) {
 
           component = els[x].getAttribute('component');
+
+          if(els[x].hasAttribute('delay')) {
+              delay = parseInt(els[x].getAttribute('delay'));
+          }
 
           if(component != '') {
 
@@ -995,7 +999,12 @@ respond.component = (function() {
                 request.send();
             }
 
-            loadComponent(el, component);
+            if(delay > 0) {
+                setTimeout(function() {loadComponent(el, component);}, delay);
+            }
+            else {
+                loadComponent(el, component);
+            }
 
           }
 
