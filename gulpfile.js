@@ -24,7 +24,7 @@ var mdl = ['material'];
 var release = 'rc2';
 
 // copy shared/base files to all themes
-gulp.task('bootstrap', function() {
+gulp.task('bootstrap', function(done) {
 
   var x;
 
@@ -36,13 +36,12 @@ gulp.task('bootstrap', function() {
 
   }
 
-  return;
-
+  done();
 
 });
 
 // copy shared/foundation files to all themes
-gulp.task('foundation', function() {
+gulp.task('foundation', function(done) {
 
   var x;
 
@@ -54,13 +53,12 @@ gulp.task('foundation', function() {
 
   }
 
-  return;
-
+  done();
 
 });
 
 // copy shared/mdl files to all themes
-gulp.task('mdl', function() {
+gulp.task('mdl', function(done) {
 
   var x;
 
@@ -72,13 +70,12 @@ gulp.task('mdl', function() {
 
   }
 
-  return;
-
+  done();
 
 });
 
 // cleanup files
-gulp.task('cleanup', function() {
+gulp.task('cleanup', function(done) {
 
   var x;
 
@@ -102,12 +99,12 @@ gulp.task('cleanup', function() {
 
   }
 
-  return;
+  done();
 
 });
 
 // package the theme for distribution
-gulp.task('package', function() {
+gulp.task('package', function(done) {
 
   var x;
 
@@ -120,11 +117,11 @@ gulp.task('package', function() {
 
   }
 
-  return;
+  done();
 
 });
 
-gulp.task('package-all', function() {
+gulp.task('package-all', function(done) {
 
   var x;
 
@@ -140,8 +137,6 @@ gulp.task('package-all', function() {
   return gulp.src(bundlePaths, {base: './', follow: true})
 		.pipe(zip('all-themes-' + release + '.zip'))
 		.pipe(gulp.dest('./dist/' + release));
-
-  return;
 
 });
 
@@ -162,12 +157,10 @@ gulp.task('package-five1', function() {
 		.pipe(zip('five-pack-1-' + release + '.zip'))
 		.pipe(gulp.dest('./dist/' + release));
 
-  return;
-
 });
 
 // package the theme for distribution
-gulp.task('screenshots', function() {
+gulp.task('screenshots', function(done) {
 
   var x;
 
@@ -179,7 +172,7 @@ gulp.task('screenshots', function() {
       .pipe(gulp.dest('./dist/' + release + '/screenshots/'));
   }
 
-  return;
+  done();
 
 });
 
@@ -187,7 +180,7 @@ gulp.task('screenshots', function() {
 // prettify html (as needed)
 gulp.task('prettify', function() {
 
-  gulp.src('temp/**/*.html')
+  return gulp.src('temp/**/*.html')
     .pipe(prettify({indent_size: 2}))
     .pipe(gulp.dest(themes[x]));
 
