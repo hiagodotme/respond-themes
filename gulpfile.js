@@ -7,13 +7,16 @@ var minify = require('gulp-minify');
 const zip = require('gulp-zip');
 
 // all themes
-var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation', 'executive', 'serene', 'sidebar', 'blank']
+var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation', 'executive', 'serene', 'sidebar', 'blank', 'stark', 'highrise', 'market', 'aspire']
 
 // list themes
-var bootstrap = ['energy', 'persistence', 'perspective', 'bootstrap', 'executive', 'serene', 'sidebar', 'blank'];
+var bootstrap = ['energy', 'persistence', 'perspective', 'bootstrap', 'executive', 'serene', 'sidebar', 'blank', 'stark', 'highrise', 'market', 'aspire'];
 
 // five-pack #1
 var five1 = ['energy', 'persistence', 'perspective', 'executive', 'serene'];
+
+// five-pack #2
+var five2 = ['stark', 'highrise', 'market', 'sidebar', 'aspire'];
 
 // foundation framework overrides
 var foundation = ['foundation'];
@@ -21,7 +24,7 @@ var foundation = ['foundation'];
 // mdl framework overrides
 var mdl = ['material'];
 
-var release = 'rc2';
+var release = '6';
 
 // copy shared/base files to all themes
 gulp.task('bootstrap', function(done) {
@@ -148,13 +151,32 @@ gulp.task('package-five1', function() {
   var bundlePaths = [];
 
   // walk through the themes
-  for(x=0; x<themes.length; x++) {
+  for(x=0; x<five1.length; x++) {
     bundlePaths.push('./' + themes[x] + '/**/*');
   }
 
   // setup package
   return gulp.src(bundlePaths, {base: './', follow: true})
 		.pipe(zip('five-pack-1-' + release + '.zip'))
+		.pipe(gulp.dest('./dist/' + release));
+
+});
+
+gulp.task('package-five2', function() {
+
+  var x;
+
+  // package all themes
+  var bundlePaths = [];
+
+  // walk through the themes
+  for(x=0; x<five2.length; x++) {
+    bundlePaths.push('./' + themes[x] + '/**/*');
+  }
+
+  // setup package
+  return gulp.src(bundlePaths, {base: './', follow: true})
+		.pipe(zip('five-pack-2-' + release + '.zip'))
 		.pipe(gulp.dest('./dist/' + release));
 
 });
@@ -187,4 +209,4 @@ gulp.task('prettify', function() {
 });
 
 // run tasks
-gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup', 'package', 'package-all', 'package-five1', 'screenshots']);
+gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup', 'package', 'package-all', 'package-five1', 'package-five2', 'screenshots']);
