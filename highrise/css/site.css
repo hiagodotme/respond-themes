@@ -4,9 +4,7 @@
 }
 
 /* h1,h2,h3 colors */
-body {
-  line-height: 0;
-}
+body {}
 
 body h1, body h2, body h3, body h4, body h5 {
 	font-family: 'Lora', sans-serif;
