@@ -22,7 +22,7 @@
     <link theme-icon href="resources/icon.png" rel="apple-touch-icon">
 
     <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
     <!-- css -->
     <link type="text/css" href="css/site.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
             </svg>
 	    </button>
-          <a class="navbar-brand" href="index"><img theme-logo src="files/energy-logo.png"></a>
+          <a class="navbar-brand" href="index"><img theme-logo src="resources/logo.png"></a>
 
           <a class="search" respond-search>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewbox="0 0 24 24" width="24">
@@ -64,33 +64,10 @@
 
     <main class="content" role="main">
 
-      <div class="block row jumbotron">
-          <img src="files/home-1.png">
-          <div class="col col-md-12"></div>
-      </div>
-      <!-- /.jumbotron -->
-
-
-      <div class="row row-center big-space">
+      <div class="row">
           <div class="col col-md-12">
               <h3>{{page.title}}</h3>
               <p>{{page.description}}</p>
-          </div>
-      </div>
-      <!-- /.container -->
-
-      <div class="row callout">
-          <img src="files/home-section-1.png">
-          <div class="col col-md-12">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit nunc, ultricies vitae pulvinar in, fringilla id lorem. Sed non dui in massa finibus posuere. Curabitur iaculis magna eget tempor pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-          </div>
-      </div>
-      <!-- /.container -->
-
-      <div class="row row-center big-space">
-          <div class="col col-md-12">
-              <h3>This is a header</h3>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere.</p>
           </div>
       </div>
       <!-- /.container -->
@@ -99,16 +76,24 @@
 
     <footer role="contentinfo">
       <div class="container">
-        <div class="block row" data-nested="not-nested" data-containerid="" data-containercssclass="">
-          <div class="col col-md-6">
-            <p>Phone: +353 1889 3111<br>
-            Email: info@energygroup.ie<br>
-            Address: Block A1,<br>
-            Eastpoint Business Park,<br>
-            Dublin 3, Ireland.</p>
+        <div id="footer-block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass="">
+          <div class="col col-md-12">
+            <h3 id="footer-h3-2">About</h3>
+            <p id="footer-p-2">This site is powered by <a href="http://respondcms.com">Respond CMS</a>. Respond CMS is an open source content management system that you can use to build beautiful, responsive websites. The latest version features Bootstrap 3.0, robust themes,
+              a complete REST API, and a beautiful UI. Stock photos from <a href="https://unsplash.com/">Unsplash</a>. Stock icon from <a href="http://www.logodust.com/?ope">Logodust</a></p>
           </div>
-          <div class="col col-md-6 bottom-align-text">
-             <ul respond-plugin type="menu" menu="primary"><li class="active"><a href="index">Home</a></li><li><a href="blog">Blog</a></li><li><a href="gallery">Gallery</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li></ul>
+        </div>
+        <div id="footer-block-2" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass="">
+          <div class="col col-md-12 text-center">
+
+            <ul respond-plugin type="menu" menu="primary">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="page/about.html">About</a></li>
+              <li><a href="page/contact.html">Contact</a></li>
+            </ul>
+
           </div>
         </div>
       </div>
