@@ -7,10 +7,10 @@ var minify = require('gulp-minify');
 const zip = require('gulp-zip');
 
 // all themes
-var themes = ['energy', 'persistence', 'perspective', 'bootstrap', 'material', 'foundation', 'executive', 'serene', 'sidebar', 'blank', 'stark', 'highrise', 'market', 'aspire']
+var themes = ['energy', 'persistence', 'perspective', 'executive', 'serene', 'sidebar', 'stark', 'highrise', 'market', 'aspire']
 
 // list themes
-var bootstrap = ['energy', 'persistence', 'perspective', 'bootstrap', 'executive', 'serene', 'sidebar', 'blank', 'stark', 'highrise', 'market', 'aspire'];
+var bootstrap = ['energy', 'persistence', 'perspective', 'executive', 'serene', 'sidebar', 'stark', 'highrise', 'market', 'aspire'];
 
 // five-pack #1
 var five1 = ['energy', 'persistence', 'perspective', 'executive', 'serene'];
@@ -19,10 +19,10 @@ var five1 = ['energy', 'persistence', 'perspective', 'executive', 'serene'];
 var five2 = ['stark', 'highrise', 'market', 'sidebar', 'aspire'];
 
 // foundation framework overrides
-var foundation = ['foundation'];
+var foundation = [];
 
 // mdl framework overrides
-var mdl = ['material'];
+var mdl = [];
 
 var release = '6.0-final';
 
@@ -152,7 +152,7 @@ gulp.task('package-five1', function() {
 
   // walk through the themes
   for(x=0; x<five1.length; x++) {
-    bundlePaths.push('./' + themes[x] + '/**/*');
+    bundlePaths.push('./' + five1[x] + '/**/*');
   }
 
   // setup package
@@ -171,7 +171,7 @@ gulp.task('package-five2', function() {
 
   // walk through the themes
   for(x=0; x<five2.length; x++) {
-    bundlePaths.push('./' + themes[x] + '/**/*');
+    bundlePaths.push('./' + five2[x] + '/**/*');
   }
 
   // setup package
