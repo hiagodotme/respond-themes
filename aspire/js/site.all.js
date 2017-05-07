@@ -362,7 +362,6 @@ respond.form = (function() {
         forms[x].addEventListener('submit', respond.form.submitForm);
       }
 
-
     },
 
     /**
@@ -391,7 +390,7 @@ respond.form = (function() {
   			// get value by type
   			var value = '';
 
-  			if(type == 'text'){
+  			if(type == 'text' || type == 'email' || type == 'number' || type == 'url' || type == 'tel' || type == 'date' || type == 'time'){
   				value = groups[x].querySelector('input').value;
   			}
   			else if(type == 'textarea'){
