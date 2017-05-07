@@ -82,5 +82,19 @@
         "value": "#B6C3CF",
         "sets": "css",
         "css": "nav{background-color: config(--menu-background-color);} body.home main .jumbotron p{background-color: config(--menu-background-color);}"
+    },
+    {
+        "id": "reCAPTCHA-site-key",
+        "label": "reCAPTCHA Site Key",
+        "description": "The site key provided at https://www.google.com/recaptcha/",
+        "type": "text",
+        "value": ""
+    },
+    {
+        "id": "reCAPTCHA-secret-key",
+        "label": "reCAPTCHA Secret Key",
+        "description": "The secret key provided at https://www.google.com/recaptcha/",
+        "type": "text",
+        "value": ""
     }
 ]
