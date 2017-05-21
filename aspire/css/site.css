@@ -641,3 +641,9 @@ body.content .blog-meta a {
     [respond-form] .btn-primary: hover {
         background-color: #A2AEE8;
     }
+
+    [respond-form] .btn-primary[disabled] {
+        background-color: #f0f0f0;
+        color: #aaa;
+        border: 1px solid #888;
+    }

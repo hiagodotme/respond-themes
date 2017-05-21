@@ -24,6 +24,16 @@
 	background-color: #08B168;
 }
 
+[respond-form] .g-recaptcha {
+  margin-bottom: 15px;
+}
+
+[respond-form] .btn-primary[disabled] {
+    background-color: #f0f0f0;
+    color: #aaa;
+    border: 1px solid #888;
+}
+
 /* loading */
 [respond-form] .loading {
 	display: none;
