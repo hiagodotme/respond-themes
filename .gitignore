@@ -3,6 +3,7 @@ logs
 *.log
 npm-debug.log*
 icon/*
+knowledgebase/*
 
 # Runtime data
 pids

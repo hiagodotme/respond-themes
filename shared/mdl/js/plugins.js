@@ -380,6 +380,12 @@ respond.form = (function() {
 
       }
 
+      // add recaptcha script
+      if(document.querySelector('.g-recaptcha-holder') != null) {
+        document.write('<script src="https://www.google.com/recaptcha/api.js?onload=onloadReCaptchaCallback&render=explicit" async defer></script>');
+        document.write('<script>function onloadReCaptchaCallback(){ respond.form.setupRecaptcha(); }</script>');
+      }
+
     },
 
     /**
@@ -557,10 +563,6 @@ respond.form = (function() {
               }
             });
 
-            form.onsubmit = function (evt){
-              //evt.preventDefault();
-              //grecaptcha.execute(holderId);
-            };
           })(forms[x]);
 
         }
