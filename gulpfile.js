@@ -7,7 +7,7 @@ var minify = require('gulp-minify');
 const zip = require('gulp-zip');
 
 // all themes
-var themes = ['energy', 'persistence', 'perspective', 'executive', 'serene', 'sidebar', 'stark', 'highrise', 'market', 'aspire']
+var themes = ['energy', 'persistence', 'perspective', 'executive', 'serene', 'sidebar', 'stark', 'highrise', 'market', 'aspire', 'base']
 
 // list themes
 var bootstrap = ['energy', 'persistence', 'perspective', 'executive', 'serene', 'sidebar', 'stark', 'highrise', 'market', 'aspire'];
@@ -24,7 +24,7 @@ var foundation = [];
 // mdl framework overrides
 var mdl = [];
 
-var release = '6.0-final';
+var release = '6.2-final';
 
 // copy shared/base files to all themes
 gulp.task('bootstrap', function(done) {
