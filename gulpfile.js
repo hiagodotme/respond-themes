@@ -24,7 +24,7 @@ var foundation = [];
 // mdl framework overrides
 var mdl = [];
 
-var release = '6.2-final';
+var release = '6.4.1-final';
 
 // copy shared/base files to all themes
 gulp.task('bootstrap', function(done) {
