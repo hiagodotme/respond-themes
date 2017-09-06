@@ -4,7 +4,8 @@ var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var minify = require('gulp-minify');
-const zip = require('gulp-zip');
+var zip = require('gulp-zip');
+var staticI18nHtml = require('gulp-static-i18n-html');
 
 // all themes
 var themes = ['energy', 'persistence', 'perspective', 'executive', 'serene', 'sidebar', 'stark', 'highrise', 'market', 'aspire', 'base']
@@ -35,41 +36,7 @@ gulp.task('bootstrap', function(done) {
   for(x=0; x<bootstrap.length; x++) {
 
     // copy shared directory to themes
-    gulp.src(['shared/bootstrap/**/*']).pipe(gulp.dest(bootstrap[x]));
-
-  }
-
-  done();
-
-});
-
-// copy shared/foundation files to all themes
-gulp.task('foundation', function(done) {
-
-  var x;
-
-  // walk through the themes
-  for(x=0; x<foundation.length; x++) {
-
-    // copy shared directory to themes
-    gulp.src(['shared/foundation/**/*']).pipe(gulp.dest(foundation[x]));
-
-  }
-
-  done();
-
-});
-
-// copy shared/mdl files to all themes
-gulp.task('mdl', function(done) {
-
-  var x;
-
-  // walk through the themes
-  for(x=0; x<mdl.length; x++) {
-
-    // copy shared directory to themes
-    gulp.src(['shared/mdl/**/*']).pipe(gulp.dest(mdl[x]));
+    gulp.src(['src/shared/bootstrap/**/*']).pipe(gulp.dest('src/' + bootstrap[x]));
 
   }
 
@@ -85,20 +52,18 @@ gulp.task('cleanup', function(done) {
   // walk through the themes
   for(x=0; x<themes.length; x++) {
 
-    console.log(themes[x]);
-
     // concat css
-    gulp.src([themes[x] + '/css/libs.min.css', themes[x] + '/css/plugins.css', themes[x] + '/css/site.css'])
+    gulp.src('src/' + [themes[x] + '/css/libs.min.css', 'src/' + themes[x] + '/css/plugins.css', 'src/' + themes[x] + '/css/site.css', 'src/' + themes[x] + '/css/utilities.css'])
       .pipe(concat('site.all.css'))
       .pipe(minifyCss())
       .pipe(rename('site.min.css'))
-      .pipe(gulp.dest(themes[x] + '/css'));
+      .pipe(gulp.dest('src/' + themes[x] + '/css'));
 
 
     // concat js
-    gulp.src([themes[x] + '/js/libs.min.js', themes[x] + '/js/plugins.js',  themes[x] + '/js/site.js'])
+    gulp.src('src/' + [themes[x] + '/js/libs.min.js', 'src/' + themes[x] + '/js/plugins.js',  'src/' + themes[x] + '/js/site.js'])
       .pipe(concat('site.all.js'))
-      .pipe(gulp.dest(themes[x] + '/js'));
+      .pipe(gulp.dest('src/' + themes[x] + '/js'));
 
   }
 
@@ -114,8 +79,8 @@ gulp.task('package', function(done) {
   // package individual themes
   for(x=0; x<themes.length; x++) {
 
-    gulp.src(themes[x] + '/**/*', {base: './', follow: true})
-  		.pipe(zip(themes[x] + '-' + release + '.zip'))
+    gulp.src('src/' + themes[x] + '/**/*', {base: './src/', follow: true})
+  		.pipe(zip('src/' + themes[x] + '-' + release + '.zip'))
   		.pipe(gulp.dest('./dist/' + release));
 
   }
@@ -133,7 +98,7 @@ gulp.task('package-all', function(done) {
 
   // walk through the themes
   for(x=0; x<themes.length; x++) {
-    bundlePaths.push('./' + themes[x] + '/**/*');
+    bundlePaths.push('./src/' + themes[x] + '/**/*');
   }
 
   // setup package
@@ -143,43 +108,6 @@ gulp.task('package-all', function(done) {
 
 });
 
-gulp.task('package-five1', function() {
-
-  var x;
-
-  // package all themes
-  var bundlePaths = [];
-
-  // walk through the themes
-  for(x=0; x<five1.length; x++) {
-    bundlePaths.push('./' + five1[x] + '/**/*');
-  }
-
-  // setup package
-  return gulp.src(bundlePaths, {base: './', follow: true})
-		.pipe(zip('five-pack-1-' + release + '.zip'))
-		.pipe(gulp.dest('./dist/' + release));
-
-});
-
-gulp.task('package-five2', function() {
-
-  var x;
-
-  // package all themes
-  var bundlePaths = [];
-
-  // walk through the themes
-  for(x=0; x<five2.length; x++) {
-    bundlePaths.push('./' + five2[x] + '/**/*');
-  }
-
-  // setup package
-  return gulp.src(bundlePaths, {base: './', follow: true})
-		.pipe(zip('five-pack-2-' + release + '.zip'))
-		.pipe(gulp.dest('./dist/' + release));
-
-});
 
 // package the theme for distribution
 gulp.task('screenshots', function(done) {
@@ -208,5 +136,15 @@ gulp.task('prettify', function() {
 
 });
 
+// localize themes
+gulp.task('i18n', function() {
+  return gulp.src('src/**/*.html')
+    .pipe(staticI18nHtml({
+      locales: ['en', 'fr']
+    }))
+
+    .pipe(gulp.dest('./dist'));
+});
+
 // run tasks
-gulp.task('default', ['bootstrap', 'foundation', 'mdl', 'cleanup', 'package', 'package-all', 'package-five1', 'package-five2', 'screenshots']);
+gulp.task('default', ['bootstrap', 'cleanup', 'package', 'package-all', 'screenshots']);

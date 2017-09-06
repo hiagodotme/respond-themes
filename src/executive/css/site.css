@@ -1,0 +1,341 @@
+/* global */
+body { }
+
+body h1, body h2, body h3, body h4, body h5 {
+	font-family: 'Fira Sans', sans-serif;
+	margin-bottom: 25px;
+	font-weight: 700;
+}
+
+body h1, body h2, body h3, body h4, body h5, body p, body blockquote {
+	margin-bottom: 25px;
+}
+
+body p, body td, body th, body small, body li, body label, body input {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 300;
+}
+
+body p, body blockquote, body label, body td, body th, body li {
+	font-size: 14px;
+	color: 555;
+	line-height: 25px;
+	line-height: 25px;
+  	font-size: 16px;
+  	font-weight: 300;
+}
+
+
+body a, body a:visited {
+	color: #428bca;
+	text-decoration: none;
+}
+
+body a:hover {
+	color: #428bca;
+	text-decoration: underline;
+}
+
+body input.form-control[type=text],
+body input.form-control[type=number],
+body input.form-control[type=password],
+body input.form-control[type=email],
+body select.form-control,
+body textarea.form-control {
+	font-size: 15px;
+	box-shadow: none !important;
+	background: none;
+	outline: none !important;
+	border: none !important;
+	border: 1px solid #ddd !important;
+	border-radius: 0 !important;
+	padding: 5px 10px !important;
+	height: 45px !important;
+    background-color: transparent;
+    -webkit-appearance: none;
+	-webkit-border-radius: 0px;
+}
+
+body button {
+  	border-radius: 0 !important;
+  	text-transform: uppercase;
+  	border-color: #ddd !important;
+}
+
+body button i {
+	color: #ccc;
+  	margin-left: 5px;
+}
+
+
+/* footer */
+body footer {
+  border-bottom: 0;
+  background: linear-gradient(45deg, rgba(80,145,199,1) 0%, rgba(130,141,150,1) 100%);;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 0;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+	body footer .container {
+		text-align: left;
+		border-bottom: 0 !important;
+	}
+
+	body footer h3, body footer p, body footer a {
+		color: #fff !important;
+	}
+
+	body footer ul {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+	}
+
+	body footer li {
+    margin: 0;
+    padding: 0 10px;
+    display: inline-block;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 12px;
+	}
+
+	body footer li a {
+		color: #00A0B0;
+		font-size: 14px;
+	}
+
+/* header */
+body header {
+  position: relative;
+  z-index: 1000;
+}
+
+body header .search {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  color: #828D96;
+}
+
+  body .search svg {
+    fill: currentColor;
+  }
+
+/* navbar */
+body header .navbar {
+	background-color: #fff !important;
+	height: 65px;
+	box-shadow: 1px 2px 3px rgba(119,119,119, 0.25);
+	margin: 0;
+	padding: 0;
+	border-radius: 0 !important;
+}
+
+  body header .navbar-toggle {
+    border: none !important;
+    background-color: #fff !important;
+    margin-right: 50px !important;
+  }
+
+  body .navbar li {
+    	height: 65px;
+    	line-height: 65px;
+  }
+
+  body .navbar li a {
+  	font-size: 16px;
+    	height: 65px;
+    	line-height: 65px;
+    	padding: 0 20px;
+    	color: rgba(80,145,199,1)
+  }
+
+    body .navbar li[active] a {
+      font-weight: bold;
+    }
+
+  	body .navbar a:hover {
+    	background-color: rgba(255,255,255,0.2) !important;
+    }
+
+    /* navbar */
+    body header .navbar-collapse {
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      width: 100%;
+      border-bottom: 2px solid #ddd;
+    }
+
+    body header .navbar-collapse ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    body header .navbar-collapse ul li {
+      padding: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+
+/* branding */
+body .navbar-brand {
+	position: absolute;
+  	top: -5px;
+  	left: 0;
+  	height: 40px;
+}
+
+body .navbar-brand img {
+	height: 40px;
+  	margin-top: 1px;
+}
+
+body .navbar-collapse {
+  z-index: 10000 !important;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+	header .logo {
+  		margin: 0 auto;
+  		max-width: 970px;
+  	}
+
+  body header .navbar-collapse ul {
+     margin-right: 50px !important;
+    }
+
+    body header .navbar-collapse {
+      border-bottom: none;
+    }
+
+    body header .navbar-collapse ul li {
+      border-bottom: none;
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+	header .logo {
+  		margin: 0 auto;
+  		max-width: 970px;
+  	}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+	header .logo {
+  		margin: 0 auto;
+      max-width: 1170px;
+  	}
+
+}
+
+/* jumbotron */
+body main .jumbotron {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  color: #fff;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+  body main .jumbotron img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  body main .jumbotron .col-md-12 {
+    position: absolute;
+    top: 225px;
+    left: 0;
+  	margin: 0;
+  	padding: 25px 0 25px 0;
+    background-color: rgba(255,255,255,0.75);
+  	max-width: 550px;
+  }
+
+  body main .jumbotron h1 {
+    	text-align: left;
+    	margin: 0;
+    	padding: 0 25px 0 25px;
+    	font-size: 25px;
+    	line-height: 35px;
+    	text-transform: uppercase;
+    	color: #555;
+    	width: 100%;
+    	max-width: 550px;
+  }
+
+  body main .jumbotron p {
+    	text-align: left;
+    	margin: 0;
+    	padding: 10px 25px 15px 25px;
+    	font-size: 15px;
+    	line-height: 25px;
+    	color: #888;
+    	width: 100%;
+    	max-width: 550px;
+  }
+
+  body main .jumbotron p:last-child {
+     padding-bottom: 0;
+  }
+
+  body main .jumbotron a, body main .jumbotron a:hover {
+      display: inline-block;
+  	  color: #888;
+    	border: 1px solid #888;
+    	padding: 10px 30px;
+    	border-radius: 0;
+    	text-decoration: none;
+  }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+	body.home aside.call-to-action a {
+  		display: inline-block;
+	}
+
+	body.home .jumbotron .respond-image img {
+    max-width: 800px;
+    margin: 0;
+	}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
