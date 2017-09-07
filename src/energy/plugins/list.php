@@ -27,6 +27,21 @@ if (isset($attributes['tag'])) {
   $tag = $attributes['tag'];
 }
 
+$length = 500;
+
+// length
+if (isset($attributes['length'])) {
+  $s_length = $attributes['length'];
+
+  if($s_length !== 'All') {
+    $length = intval($s_length);
+  }
+
+}
+
+// set count;
+$count = 0;
+
 // walk through pages and filter by url
 foreach ($pages as $page) {
 
@@ -48,6 +63,11 @@ foreach ($pages as $page) {
 
   }
 
+  // break loop
+  if($count >= $length) {
+    break;
+  }
+
   // check if the URL starts with
   if (url_starts_with($page['url'], $attributes['url'])) {
 
@@ -61,6 +81,24 @@ foreach ($pages as $page) {
           $html .= '<div class="list-thumb">' .
                       '<a href="'.$page['url'].'" title="'.$page['description'].'"><img src="'.$page['thumb'].'"></a>'.
                       '<h5><a href="'.$page['url'].'">'.$page['title'].'</a></h5>'.
+                   '</div>';
+
+         }
+
+      }
+
+    }
+    else if ($attributes['display'] == 'card') {
+
+      if(isset($page['thumb'])) {
+
+        if($page['thumb'] != '') {
+
+          // list thumb
+          $html .= '<div class="list-card">' .
+                      '<a href="'.$page['url'].'" title="'.$page['description'].'"><img src="'.$page['thumb'].'"></a>'.
+                      '<h5><a href="'.$page['url'].'">'.$page['title'].'</a></h5>'.
+                      '<p>'.$page['description'].'</p>'.
                    '</div>';
 
          }
@@ -94,6 +132,9 @@ foreach ($pages as $page) {
                 '</div>';
 
     }
+
+    // increment
+    $count++;
 
   }
 

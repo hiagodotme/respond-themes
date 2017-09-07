@@ -70,9 +70,19 @@
 /* maps */
 .map-container {
   display: block;
-  height: 200px;
+  height: 350px;
   width: 100%;
   border: 1px solid #ddd;
+}
+
+.map-address {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  padding: 10px;
+  width: 400px;
+  margin: 0 0 0 -200px;
+  background-color: rgba(255,255,255,.9);
 }
 
 /* list items */
@@ -99,6 +109,47 @@ body .list-item p {
   margin: 0 !important;
   padding: 0;
   text-align: left !important;
+}
+
+/* list cards */
+body [respond-plugin][display="card"] .list {
+    text-align: center;
+}
+
+body .list-card {
+  display: inline-block;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 25px 25px 25px;
+}
+
+body .list-card img {
+  width: 280px;
+}
+
+body .list-card h5 {
+  font-size: 16px;
+  margin: 0;
+  padding: 20px 10px 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 280px;
+}
+
+body .list-card p {
+  font-size: 16px;
+  margin: 0;
+  padding: 0 10px 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 280px;
 }
 
 /* toast */
