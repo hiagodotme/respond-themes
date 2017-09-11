@@ -52,8 +52,10 @@ gulp.task('cleanup', function(done) {
   // walk through the themes
   for(x=0; x<themes.length; x++) {
 
+    console.log(themes[x]);
+
     // concat css
-    gulp.src('src/' + [themes[x] + '/css/libs.min.css', 'src/' + themes[x] + '/css/plugins.css', 'src/' + themes[x] + '/css/site.css', 'src/' + themes[x] + '/css/utilities.css'])
+    gulp.src(['src/' + themes[x] + '/css/libs.min.css', 'src/' + themes[x] + '/css/plugins.css', 'src/' + themes[x] + '/css/site.css', 'src/' + themes[x] + '/css/utilities.css'])
       .pipe(concat('site.all.css'))
       .pipe(minifyCss())
       .pipe(rename('site.min.css'))

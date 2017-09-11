@@ -3,6 +3,7 @@
     "blog": "Blog",
     "gallery": "Gallery",
     "about": "About",
+    "search": "Search",
     "contact": "Contact",
     "headline": "Beautiful themes built for speed",
     "follow": "Take your idea from concept to completion faster by starting with our beautiful, responsive themes.",
@@ -28,5 +29,12 @@
     "call": "Give us a call at (123) 456-7890 or email us at <a href=\"mailto:sample@sample.com\">sample@sample.com</a>",
     "power": "This site is powered by <a href=\"http://respondcms.com\">Respond CMS</a>. Respond CMS is an open source content management system that you can use to build beautiful, responsive websites. The latest version features Bootstrap 3.0, robust themes,
               a complete REST API, and a beautiful UI. Images from <a href=\"https://unsplash.com/\">Unsplash</a>.",
-    "recent": "Recent Posts"
+    "recent": "Recent Posts",
+    "error": "Error",
+    "notFound": "Page not found",
+    "sampleGallery", "sampleGallery",
+    "anotherBlogPost": "Another Blog Post",
+    "sampleBlogPost": "Sample Blog Post",
+    "mostRecentPost": "Most Recent Post",
+    "morePosts": "More Posts"
 }

@@ -3,7 +3,7 @@
 
   <head>
 
-    <title>Another Blog Post</title>
+    <title data-t="anotherBlogPost">Another Blog Post</title>
 
     <!-- meta -->
     <meta charset="utf-8">
@@ -44,11 +44,17 @@
   <body class="content">
 
     <header role="banner">
+
       <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-	      <i class="fa fa-bars"></i>
-	    </button>
-          <a class="navbar-brand" href="index.html"><img theme-logo src="resources/logo.png"></a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#888888" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+          </button>
+
+          <a class="navbar-brand" href="index"><img theme-logo src="resources/logo.png"></a>
 
           <a class="search" respond-search>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
@@ -59,25 +65,28 @@
 
         </div>
         <!-- /.navbar-header -->
+
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
           <ul respond-plugin type="menu" menu="primary" class="nav navbar-nav navbar-right">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="page/about.html">About</a></li>
-            <li><a href="page/contact.html">Contact</a></li>>
+            <li><a href="index.html" data-t="home">Home</a></li>
+            <li><a href="blog.html" data-t="blog">Blog</a></li>
+            <li><a href="gallery.html" data-t="gallery">Gallery</a></li>
+            <li><a href="page/about.html" data-t="about">About</a></li>
+            <li><a href="page/contact.html" data-t="contact">Contact</a></li>
           </ul>
 
         </div>
         <!-- /.navbar-collapse -->
       </nav>
+
     </header>
+    <!-- /header -->
 
     <main role="main">
       <div class="row full-width center-content top-half-spacing bottom-no-spacing">
           <div class="col col-md-12">
-              <h1>Another Blog Post</h1>
+              <h1 data-t="anotherBlogPost">Another Blog Post</h1>
 
               <div class="divider"><span></span></div>
           </div>
@@ -102,34 +111,35 @@
     </main>
 
     <footer role="contentinfo">
+
       <div class="container">
-        <div id="footer-block-1" class="block row">
+        <div class="row">
           <div class="col col-md-6">
-            <h3 id="footer-h3-1">Contact</h3>
-            <p id="footer-p-1">Give us a call at (123) 456-7890 or email us at&nbsp;<a href="mailto:sample@sample.com">sample@sample.com</a>.</p>
+            <h3 data-t="contact">Contact</h3>
+            <p data-t="call">Give us a call at (123) 456-7890 or email us at <a href="mailto:sample@sample.com">sample@sample.com</a>.</p>
           </div>
           <div class="col col-md-6">
-            <h3 id="footer-h3-2">About</h3>
-            <p id="footer-p-2">This site is powered by <a href="http://respondcms.com">Respond CMS</a>. Respond CMS is an open source content management system that you can use to build beautiful, responsive websites. The latest version features Bootstrap 3.0, robust themes,
-              a complete REST API, and a beautiful UI.</p>
+            <h3 data-t="about">About</h3>
+            <p data-t="power">This site is powered by <a href="http://respondcms.com">Respond CMS</a>. Respond CMS is an open source content management system that you can use to build beautiful, responsive websites. The latest version features Bootstrap 3.0, robust themes,
+              a complete REST API, and a beautiful UI. Images from <a href="https://unsplash.com/">Unsplash</a>.</p>
           </div>
         </div>
-        <div id="footer-block-2" class="block row">
+        <div class="row">
           <div class="col col-md-12">
-
             <ul respond-plugin type="menu" menu="primary">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="page/about.html">About</a></li>
-              <li><a href="page/contact.html">Contact</a></li>
+              <li><a href="index.html" data-t="home">Home</a></li>
+              <li><a href="blog.html" data-t="blog">Blog</a></li>
+              <li><a href="gallery.html" data-t="gallery">Gallery</a></li>
+              <li><a href="page/about.html" data-t="about">About</a></li>
+              <li><a href="page/contact.html" data-t="contact">Contact</a></li>
             </ul>
-
           </div>
         </div>
       </div>
       <!-- /.container -->
+
     </footer>
+    <!-- /footer -->
 
   </body>
 

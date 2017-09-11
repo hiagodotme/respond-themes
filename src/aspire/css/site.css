@@ -80,11 +80,14 @@ body button i {
   	margin-left: 5px;
 }
 
-/* nested containers */
 main {
   margin: 0;
   padding: 0;
 }
+
+  .content main {
+    padding-top: 125px;
+  }
 
 /* footer */
 body footer {
@@ -96,6 +99,10 @@ body footer {
   text-align: left;
   margin-bottom: 0;
 }
+
+  body.content footer {
+    margin-top: 100px;
+  }
 
   body footer * {
     color: #fff;
@@ -155,7 +162,13 @@ body header {
   padding: 0;
   margin: 0;
   z-index: 10;
+  height: 85px;
+  background: linear-gradient(45deg, #759AC0 0%, #293952 100%);
 }
+
+  body.home header {
+    background: none;
+  }
 
   body header .navbar-toggle {
     position: absolute;

@@ -218,13 +218,26 @@ body .row.vignette {
   body .vignette h3,
   body .vignette h4,
   body .vignette h5,
-  body .vignettet li,
+  body .vignette li,
   body .vignette div,
   body .vignette p {
     text-align: center;
     color: #555;
     padding: 0 50px;
     text-shadow: 1px 1px 5px rgba(255,255,255,.6);
+  }
+
+  /* vignette-white-text */
+  body .vignette.vignette-white-text h1,
+  body .vignette.vignette-white-text h2,
+  body .vignette.vignette-white-text h3,
+  body .vignette.vignette-white-text h4,
+  body .vignette.vignette-white-text h5,
+  body .vignette.vignette-white-text li,
+  body .vignette.vignette-white-text div,
+  body .vignette.vignette-white-text p {
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,.6);
   }
 
 /* Small devices (tablets, 768px and up) */
