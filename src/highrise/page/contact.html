@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
   <head>
-    <title>Contact</title>
+    <title data-t="contact">Contact</title>
 
     <!-- meta -->
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
     <!-- google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
-  <style respond-settings></style></head>
+  </head>
 
   <body class="content" data-lastmodified="2016-12-16T18:17:51+0000" data-template="default" data-tags="">
 
@@ -62,47 +62,58 @@
         <!-- /.navbar-header -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-          <ul respond-plugin type="menu" menu="primary" class="nav navbar-nav navbar-right"><li class="active"><a href="index">Home</a></li><li><a href="blog">Blog</a></li><li><a href="gallery">Gallery</a></li><li><a href="page/about">About</a></li><li><a href="page/contact">Contact</a></li></ul>
+          <ul respond-plugin type="menu" menu="primary" class="nav navbar-nav navbar-right">
+            <li><a href="index.html" data-t="home">Home</a></li>
+            <li><a href="blog.html" data-t="blog">Blog</a></li>
+            <li><a href="gallery.html" data-t="gallery">Gallery</a></li>
+            <li><a href="page/about.html" data-t="about">About</a></li>
+            <li><a href="page/contact.html" data-t="contact">Contact</a></li>
+          </ul>
 
         </div>
         <!-- /.navbar-collapse -->
       </nav>
     </header>
 
-    <div id="content" class="container" role="main">
-      <div id="block-1" class="block row">
+    <main role="main">
+      <div class="block row">
         <div class="col col-md-12">
-          <h1 id="h1-1">Contact</h1>
-          <div respond-plugin="" type="form" form="contact-us"><form id="contact-us" action="http://dev.respondcms.com/api/submissions/submit" method="post" data-site="energy-site" respond-form><input name="siteid" type="hidden" value="energy-site"><input name="formid" type="hidden" value="contact-us"><div class="form-group" data-id="name" data-label="* Name"  data-type="text" data-required="true"><label for="name" class="control-label">* Name</label><input id="name" name="name" type="text" placeholder="" class="form-control"></div><div class="form-group" data-id="email" data-label="* Email"  data-type="text" data-required="true"><label for="email" class="control-label">* Email</label><input id="email" name="email" type="text" placeholder="" class="form-control"></div><div class="form-group" data-id="phone" data-label="Phone"  data-type="text" data-required="false"><label for="phone" class="control-label">Phone</label><input id="phone" name="phone" type="text" placeholder="" class="form-control"></div><div class="form-group" data-id="preferred" data-label="* Preferred Contact Method"  data-type="radiolist" data-required="true"><label for="preferred" class="control-label">* Preferred Contact Method</label><span class="checkbox list"><label class="checkbox"><input name="preferred" type="radio" value="Email"><span>Email</span></label><label class="checkbox"><input name="preferred" type="radio" value=" Phone"><span> Phone</span></label></span></div><div class="form-group" data-id="comments" data-label="Comments"  data-type="textarea" data-required=""><label for="comments" class="control-label">Comments</label><textarea id="comments" name="comments" placeholder="" class="form-control"></textarea></div><button type="submit" class="btn btn-primary">Submit</button><span class="loading"><!-- ack: https://github.com/jxnblk/loading --><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><g><path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4"/><path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z"><animatetransform attributename="transform" type="rotate" from="0 16 16" to="360 16 16" dur="0.8s" repeatcount="indefinite" /></path></g></svg></span><span class="error">There was an error submitting your form</span></form></div>
+          <h1 data-t="contact">Contact</h1>
+          <div respond-plugin="" type="form" form="contact-us"></div>
         </div>
       </div>
-    </div>
+    </main>
 
     <footer role="contentinfo">
+
       <div class="container">
-        <div id="footer-block-1" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass="">
-          <div class="col col-md-12">
-            <h3 id="footer-h3-2">About</h3>
-            <p id="footer-p-2">This site is powered by <a href="http://respondcms.com">Respond CMS</a>. Respond CMS is an open source content management system that you can use to build beautiful, responsive websites. The latest version features Bootstrap 3.0, robust themes,
-              a complete REST API, and a beautiful UI. Stock photos from <a href="https://unsplash.com/">Unsplash</a>. Stock icon from <a href="http://www.logodust.com/?ope">Logodust</a></p>
+        <div class="row">
+          <div class="col col-md-6">
+            <h3 data-t="contact">Contact</h3>
+            <p data-t="call">Give us a call at (123) 456-7890 or email us at <a href="mailto:sample@sample.com">sample@sample.com</a>.</p>
+          </div>
+          <div class="col col-md-6">
+            <h3 data-t="about">About</h3>
+            <p data-t="power">This site is powered by <a href="http://respondcms.com">Respond CMS</a>. Respond CMS is an open source content management system that you can use to build beautiful, responsive websites. The latest version features Bootstrap 3.0, robust themes,
+              a complete REST API, and a beautiful UI. Images from <a href="https://unsplash.com/">Unsplash</a>.</p>
           </div>
         </div>
-        <div id="footer-block-2" class="block row" data-nested="not-nested" data-containerid="" data-containercssclass="">
-          <div class="col col-md-12 text-center">
-
+        <div class="row center-content">
+          <div class="col col-md-12">
             <ul respond-plugin type="menu" menu="primary">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="page/about.html">About</a></li>
-              <li><a href="page/contact.html">Contact</a></li>
+              <li><a href="index.html" data-t="home">Home</a></li>
+              <li><a href="blog.html" data-t="blog">Blog</a></li>
+              <li><a href="gallery.html" data-t="gallery">Gallery</a></li>
+              <li><a href="page/about.html" data-t="about">About</a></li>
+              <li><a href="page/contact.html" data-t="contact">Contact</a></li>
             </ul>
-
           </div>
         </div>
       </div>
       <!-- /.container -->
+
     </footer>
+    <!-- /footer -->
 
   </body>
 

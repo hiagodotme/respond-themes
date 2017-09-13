@@ -89,6 +89,13 @@ main {
     padding-top: 125px;
   }
 
+/* overwrite utilities */
+body .divider span,
+body .row .feature-icon span,
+body .row.callout {
+  background: linear-gradient(45deg, rgba(44,61,87,1) 0%, rgba(86,130,175,1) 100%) !important;
+}
+
 /* footer */
 body footer {
   border-bottom: 0;
